@@ -50,6 +50,11 @@
 #ifdef RESET_TIMER_ENABLE
 #define TIMER_PERIOD	(500)
 
+/****** for VIS debugging ******/
+#define VISDebug
+
+/*************End***************/
+
 static CyU3PTimer        UvcTimer;
 
 static void UvcAppProgressTimer (uint32_t arg)
@@ -350,6 +355,9 @@ esUVCGpifCB (
             }
         }
     }
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rJump into GPIFCB: event %d currentState %d", event, currentState);
+#endif
 }
 
 
@@ -385,6 +393,9 @@ esUVCUvcAppDmaCallback (
 #endif
 
         status = CyU3PDmaMultiChannelGetBuffer(chHandle, &DmaBuffer, CYU3P_NO_WAIT);
+#ifdef VISDebug
+//    CyU3PDebugPrint (4, "\n\rAppDmaCallback:CY_U3P_DMA_CB_PROD_EVENT CyU3PDmaMultiChannelGetBuffer %x", status);
+#endif
         while (status == CY_U3P_SUCCESS)
         {
             /* Add Headers*/
@@ -392,6 +403,10 @@ esUVCUvcAppDmaCallback (
             {
                 esUVCUvcAddHeader ((DmaBuffer.buffer - ES_UVC_PROD_HEADER), ES_UVC_HEADER_EOF);
                 glHitFV = CyTrue;
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppDmaCallback:CY_U3P_DMA_CB_PROD_EVENT count %x glDMATxCount++ %x", DmaBuffer.count, glDMATxCount++);
+#endif
+
             }
             else
             {
@@ -436,7 +451,9 @@ esUVCUvcAppDmaCallback (
             else
                 CyU3PGpifSMSwitch(ES_UVC_INVALID_GPIF_STATE, CX3_START_SCK0,
                 		ES_UVC_INVALID_GPIF_STATE, ALPHA_CX3_START_SCK0, ES_UVC_GPIF_SWITCH_TIMEOUT);
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppDmaCallback:CY_U3P_DMA_CB_CONS_EVENT glActiveSocket  %x", glActiveSocket);
+#endif
             CyU3PUsbLPMEnable ();
             doLpmDisable = CyTrue;
 #ifdef RESET_TIMER_ENABLE
@@ -503,8 +520,14 @@ esUVCUvcApplnUSBEventCB (
                 {
                 	glIsClearFeature = CyTrue;
                     esUVCUvcApplnStop ();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rCY_U3P_USB_EVENT_SETINTF&ES_UVC_STREAM_INTERFACE: esUVCUvcApplnStop");
+#endif
                 }
                 esUVCUvcApplnStart ();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rCY_U3P_USB_EVENT_SETINTF&ES_UVC_STREAM_INTERFACE: esUVCUvcApplnStart");
+#endif
 
             }
             else if ((altSetting == 0x00) && (interface == 1))
@@ -513,7 +536,11 @@ esUVCUvcApplnUSBEventCB (
             	/* Stop the application before re-starting. */
             	glIsClearFeature = CyTrue;
 				esUVCUvcApplnStop ();
+
 				glcommitcount = 0;
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rCY_U3P_USB_EVENT_SETINTF: esUVCUvcApplnStop");
+#endif
             }
             break;
 
@@ -535,6 +562,9 @@ esUVCUvcApplnUSBEventCB (
             {
             	glIsClearFeature = CyTrue;
                 esUVCUvcApplnStop ();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rEvent %x: esUVCUvcApplnStop", evtype);
+#endif
             }
             break;
         default:
@@ -665,6 +695,9 @@ esUVCUvcApplnUSBSetupCB (
             glIsClearFeature = CyTrue;
             esUVCUvcApplnStop();
             glcommitcount = 0;
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rApplnUSBSetupCB: esUVCUvcApplnStop");
+#endif
         }
         return CyFalse;
     }
@@ -822,8 +855,14 @@ esUVCUvcApplnUSBSetupCB (
 									glIsClearFeature = CyTrue;
 
 								esUVCUvcApplnStop();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rApplnUSBSetupCB:ES_UVC_VS_COMMIT_CONTROL esUVCUvcApplnStop");
+#endif
 							}
 							esUVCUvcApplnStart();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rApplnUSBSetupCB:ES_UVC_VS_COMMIT_CONTROL esUVCUvcApplnStart");
+#endif
 							}
 						}
 					}
@@ -1347,7 +1386,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:I2CInit Err = 0x%x.",status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:I2CInit");
+#endif
     /* Initialize GPIO module. */
     status = CyU3PMipicsiInitializeGPIO ();
     if( status != CY_U3P_SUCCESS)
@@ -1355,7 +1396,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:GPIOInit Err = 0x%x",status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:GPIOInit");
+#endif
     /* Initialize the PIB block */
     status = CyU3PMipicsiInitializePIB ();
     if (status != CY_U3P_SUCCESS)
@@ -1363,7 +1406,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:PIBInit Err = 0x%x",status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:PIBInit");
+#endif
     /* Start the USB functionality */
     status = CyU3PUsbStart();
     if (status != CY_U3P_SUCCESS)
@@ -1371,6 +1416,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:UsbStart Err = 0x%x",status);
         esUVCAppErrorHandler(status);
     }
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:UsbStart");
+#endif
     /* The fast enumeration is the easiest way to setup a USB connection,
      * where all enumeration phase is handled by the library. Only the
      * class / vendor requests need to be handled by the application. */
@@ -1391,7 +1439,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_SS_Device_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_SS_Device_Dscr");
+#endif
     /* High speed device descriptor. */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_HS_DEVICE_DESCR, 0, (uint8_t *)esUVCUSB20DeviceDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1399,7 +1449,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_HS_Device_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_HS_Device_Dscr");
+#endif
     /* BOS descriptor */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_SS_BOS_DESCR, 0, (uint8_t *)esUVCUSBBOSDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1407,7 +1459,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_BOS_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_BOS_Dscr");
+#endif
     /* Device qualifier descriptor */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_DEVQUAL_DESCR, 0, (uint8_t *)esUVCUSBDeviceQualDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1415,7 +1469,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_DEVQUAL_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_DEVQUAL_Dscr");
+#endif
     /* Super speed configuration descriptor */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_SS_CONFIG_DESCR, 0, (uint8_t *)esUVCUSBSSConfigDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1423,7 +1479,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_SS_CFG_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_SS_CFG_Dscr");
+#endif
     /* High speed configuration descriptor */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_HS_CONFIG_DESCR, 0, (uint8_t *)esUVCUSBHSConfigDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1431,7 +1489,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_HS_CFG_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_HS_CFG_Dscr");
+#endif
     /* Full speed configuration descriptor */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_FS_CONFIG_DESCR, 0, (uint8_t *)esUVCUSBFSConfigDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1439,7 +1499,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:Set_FS_CFG_Dscr Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:Set_FS_CFG_Dscr");
+#endif
     /* String descriptor 0 */
     status = CyU3PUsbSetDesc(CY_U3P_USB_SET_STRING_DESCR, 0, (uint8_t *)esUVCUSBStringLangIDDscr);
     if (status != CY_U3P_SUCCESS)
@@ -1491,11 +1553,11 @@ esUVCUvcApplnInit (void)
 
     //TODO Change this function with the "Sensor specific" function to Write the Base I2C settings into the sensor
     /* Setup Image Sensor */
-	esOV5640_Base_Config();
+	//esOV5640_Base_Config();
 	 //TODO Change this function with the "Sensor specific" function to Write the Base I2C settings for autofocus into the sensor
-	esOV5640_Auto_Focus_Config();
+	//esOV5640_Auto_Focus_Config();
 	//TODO Change this function with "Sensor Specific" PowerDown function to PowerDown the sensor
-	esCamera_Power_Down();
+	//esCamera_Power_Down();
 
     /* Connect the USB pins and enable super speed operation */
     status = CyU3PConnectState(CyTrue, CyTrue);
@@ -1504,7 +1566,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:ConnectState Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "n\rAppInit:ConnectState");
+#endif
     /* Since the status interrupt endpoint is not used in this application,
      * just enable the EP in the beginning. */
     /* Control status interrupt endpoint configuration */
@@ -1563,7 +1627,9 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:CyU3PSetEpConfig BulkEp Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:CyU3PSetEpConfig BulkEp");
+#endif
     CyU3PUsbEPSetBurstMode (ES_UVC_EP_BULK_VIDEO, CyTrue);
 
     /* Flush the endpoint memory */
@@ -1587,7 +1653,7 @@ esUVCUvcApplnInit (void)
     dmaCfg.consHeader           = 0;
     dmaCfg.prodAvailCount       = 0;
 
-    status = CyU3PDmaMultiChannelCreate (&glChHandleUVCStream, CY_U3P_DMA_TYPE_MANUAL_MANY_TO_ONE , &dmaCfg);
+    status = CyU3PDmaMultiChannelCreate (&glChHandleUVCStream, CY_U3P_DMA_TYPE_MANUAL_MANY_TO_ONE , &dmaCfg); // the glChHandleUVCStream is set
     if (status != CY_U3P_SUCCESS)
     {
         CyU3PDebugPrint (4, "\n\rAppInit:DmaMultiChannelCreate Err = 0x%x", status);
@@ -1596,12 +1662,14 @@ esUVCUvcApplnInit (void)
 
     /* Reset the channel: Set to DSCR chain starting point in PORD/CONS SCKT; set
        DSCR_SIZE field in DSCR memory */
-    status = CyU3PDmaMultiChannelReset(&glChHandleUVCStream);
+    status = CyU3PDmaMultiChannelReset(&glChHandleUVCStream);  //-TODO the glChHandleUVCStream
     if (status != CY_U3P_SUCCESS)
     {
         CyU3PDebugPrint (4,"\n\rAppInit:MultiChannelReset Err = 0x%x", status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:MultiChannelReset");
+#endif
     /* Configure the Fixed Function GPIF on the CX3 to use a 16 bit bus, and
      * a DMA Buffer of size CX3_UVC_DATA_BUF_SIZE
      */
@@ -1612,7 +1680,9 @@ esUVCUvcApplnInit (void)
         esUVCAppErrorHandler(status);
     }
     CyU3PThreadSleep(50);
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:MipicsiGpifLoad");
+#endif
     CyU3PGpifRegisterCallback(esUVCGpifCB);
     CyU3PThreadSleep(50);
 
@@ -1624,7 +1694,9 @@ esUVCUvcApplnInit (void)
         esUVCAppErrorHandler(status);
     }
     CyU3PThreadSleep(50);
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:GpifSMStart");
+#endif
     /* Pause the GPIF*/
     CyU3PGpifSMControl(CyTrue);
 
@@ -1635,14 +1707,18 @@ esUVCUvcApplnInit (void)
         CyU3PDebugPrint (4, "\n\rAppInit:MipicsiInit Err = 0x%x", status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:MipicsiInit");
+#endif
     status = CyU3PMipicsiSetIntfParams(&cfgUvcVgaNoMclk, CyFalse);
     if (status != CY_U3P_SUCCESS)
     {
         CyU3PDebugPrint (4, "\n\rAppInit:MipicsiSetIntfParams Err = 0x%x",status);
         esUVCAppErrorHandler(status);
     }
-
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rAppInit:MipicsiSetIntfParams");
+#endif
 #ifdef RESET_TIMER_ENABLE
     CyU3PTimerCreate (&UvcTimer, UvcAppProgressTimer, 0x00, TIMER_PERIOD, 0, CYU3P_NO_ACTIVATE);
 #endif
@@ -1723,12 +1799,18 @@ esUVCUvcAppThread_Entry (
             {
             	glIsClearFeature = CyFalse;
                 esUVCUvcApplnStop();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rES_TIMER_RESET_EVENT: esUVCUvcApplnStop");
+#endif
             }
             if(glPreviewStarted == CyTrue)
             {
             	//TODO Change this function with "Sensor Specific" function to write the sensor settings & configure the CX3 for supported resolutions
             	esSetCameraResolution(glFrameIndexToSet);
             	esUVCUvcApplnStart();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rES_TIMER_RESET_EVENT: esUVCUvcApplnStart");
+#endif
             }
 #ifdef RESET_TIMER_ENABLE
             CyU3PTimerModify (&UvcTimer, TIMER_PERIOD, 0);
@@ -1738,19 +1820,28 @@ esUVCUvcAppThread_Entry (
         if(eventFlag & ES_USB_SUSP_EVENT_FLAG)
         {
             /* Place CX3 in Low Power Suspend mode, with USB bus activity as the wakeup source. */
-            CyU3PMipicsiSleep();
+            //CyU3PMipicsiSleep();
             //TODO Change this function with "Sensor Specific" PowerDown function to PowerDown the sensor
-            esCamera_Power_Down();
+            //esCamera_Power_Down();
 
-            status = CyU3PSysEnterSuspendMode (CY_U3P_SYS_USB_BUS_ACTVTY_WAKEUP_SRC, 0, &wakeReason);
-            if(glMipiActive)
+            //status = CyU3PSysEnterSuspendMode (CY_U3P_SYS_USB_BUS_ACTVTY_WAKEUP_SRC, 0, &wakeReason);
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rES_USB_SUSP_EVENT_FLAG %x", status);
+#endif
+    		if(glMipiActive)
             {
                 CyU3PMipicsiWakeup();
                 //TODO Change this function with "Sensor Specific" PowerUp function to PowerUp the sensor
                 esCamera_Power_Up();
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rES_USB_SUSP_EVENT_FLAG: esCamera_Power_Up");
+#endif
             }
             continue;
         }
+#ifdef VISDebug
+    CyU3PDebugPrint (4, "\n\rApp Thread Loop");
+#endif
     } /* End of for(;;) */
 }
 
