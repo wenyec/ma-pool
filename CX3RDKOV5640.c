@@ -587,7 +587,8 @@ static CyBool_t esUVCApplnLPMRqtCB (
 void esSetCameraResolution(uint8_t FrameIndex)
 {
 	CyU3PReturnStatus_t status = CY_U3P_SUCCESS;
-	CyU3PDebugPrint (4, "\n\resSetCameraResolution");
+	CyU3PDebugPrint (4, "\n\resSetCameraResolution %d", FrameIndex);
+	FrameIndex = 0x03; //force to set VGA 30fps -debug
 	/* Super Speed USB Streams*/
 	if (CyU3PUsbGetSpeed () == CY_U3P_SUPER_SPEED)
 	{
@@ -609,7 +610,7 @@ void esSetCameraResolution(uint8_t FrameIndex)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams FS Err = 0x%x", status);
 			}
-			esOV5640_VGA_config();
+			esOV5640_VGA_config(); //for experiment
 		}
 		else if(FrameIndex == 0x03)
 		{
@@ -619,7 +620,7 @@ void esSetCameraResolution(uint8_t FrameIndex)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS2 Err = 0x%x", status);
 			}
-			esOV5640_720P_config();
+			esOV5640_VGA_config();//esOV5640_720P_config(); //for experiment
 		}
 		else if(FrameIndex == 0x04)
 		{
