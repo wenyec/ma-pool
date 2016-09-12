@@ -261,7 +261,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x80, 0x00, 0x00, 0xAA,
     0x00, 0x38, 0x9B, 0x71,
     0x10,                               /* Number of bits per pixel: 16*/
-    0x01,                               /* Optimum Frame Index for this stream: 2 (720p) */
+    0x03,                               /* Optimum Frame Index for this stream: 2 (720p) */
     0x00,                               /* X dimension of the picture aspect ratio; Non-interlaced */
     0x00,                               /* Y dimension of the pictuer aspect ratio: Non-interlaced */
     0x00,                               /* Interlace Flags: Progressive scanning, no interlace */
@@ -786,10 +786,10 @@ CyU3PMipicsiCfg_t cfgUvc1080p30NoMclk =  {
 
 /* Configuration parameters for 720p @60FPS for the OV5640 sensor */
 CyU3PMipicsiCfg_t cfgUvc720p60NoMclk =  {
-		CY_U3P_CSI_DF_YUV422_8_2,     	/* dataFormat   */
-		2,                          	/* numDataLanes */
+		CY_U3P_CSI_DF_YUV422_8_1,     	/* dataFormat  CY_U3P_CSI_DF_YUV422_8_2 */
+		1,                          	/* numDataLanes org:2*/
 		1,                        		/* pllPrd       */
-		62,                         	/* pllFbd       */
+		32,                         	/* pllFbd    62   */
 		CY_U3P_CSI_PLL_FRS_250_500M, 	/* pllFrs      */
 		CY_U3P_CSI_PLL_CLK_DIV_4,   	/* csiRxClkDiv  */
 		CY_U3P_CSI_PLL_CLK_DIV_4,   	/* parClkDiv    */
@@ -825,7 +825,7 @@ CyU3PMipicsiCfg_t cfgUvcVga30NoMclk =  {
 		CY_U3P_CSI_PLL_CLK_DIV_8,     	/* parClkDiv    */
 		0x00,                         	/* mclkCtl      */
 		CY_U3P_CSI_PLL_CLK_DIV_8,     	/* mClkRefDiv   */
-		640,                          	/* hResolution  */
+		1280,                          	/* hResolution  640*/
 		0x01                          	/* fifoDelay    */
 };
 /* [ ] */

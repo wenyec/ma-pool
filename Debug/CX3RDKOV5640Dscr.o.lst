@@ -273,7 +273,7 @@
  283 00a7 9B       		.byte	-101
  284 00a8 71       		.byte	113
  285 00a9 10       		.byte	16
- 286 00aa 01       		.byte	1
+ 286 00aa 03       		.byte	3
  287 00ab 00       		.byte	0
  288 00ac 00       		.byte	0
  289 00ad 00       		.byte	0
@@ -1036,11 +1036,11 @@
  1080 0012 0000     		.section	.data.cfgUvc720p60NoMclk,"aw",%progbits
  1081              		.align	2
  1084              	cfgUvc720p60NoMclk:
- 1085 0000 26       		.byte	38
- 1086 0001 02       		.byte	2
+ 1085 0000 16       		.byte	22
+ 1086 0001 01       		.byte	1
  1087 0002 01       		.byte	1
  1088 0003 00       		.space	1
- 1089 0004 3E00     		.short	62
+ 1089 0004 2000     		.short	32
  1090 0006 01       		.byte	1
  1091 0007 01       		.byte	1
  1092 0008 01       		.byte	1
@@ -1084,7 +1084,7 @@
  1134 000a 0000     		.short	0
  1135 000c 00       		.byte	0
  1136 000d 00       		.space	1
- 1137 000e 8002     		.short	640
+ 1137 000e 0005     		.short	1280
  1138 0010 0100     		.short	1
  1139 0012 0000     		.text
  1140              	.Letext0:
@@ -1100,56 +1100,56 @@ DEFINED SYMBOLS
                             *ABS*:00000000 CX3RDKOV5640Dscr.c
                             *COM*:000000a8 uvcAppThread
                             *COM*:00000028 glTimerEvent
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:23     .rodata.esUVCUSB30DeviceDscr:00000000 esUVCUSB30DeviceDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:20     .rodata.esUVCUSB30DeviceDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:47     .rodata.esUVCUSB20DeviceDscr:00000000 esUVCUSB20DeviceDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:44     .rodata.esUVCUSB20DeviceDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:71     .rodata.esUVCUSBBOSDscr:00000000 esUVCUSBBOSDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:68     .rodata.esUVCUSBBOSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:99     .rodata.esUVCUSBDeviceQualDscr:00000000 esUVCUSBDeviceQualDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:96     .rodata.esUVCUSBDeviceQualDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:115    .rodata.esUVCUSBSSConfigDscr:00000000 esUVCUSBSSConfigDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:112    .rodata.esUVCUSBSSConfigDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:439    .rodata.esUVCUSBHSConfigDscr:00000000 esUVCUSBHSConfigDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:436    .rodata.esUVCUSBHSConfigDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:650    .rodata.esUVCUSBFSConfigDscr:00000000 esUVCUSBFSConfigDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:647    .rodata.esUVCUSBFSConfigDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:665    .rodata.esUVCUSBStringLangIDDscr:00000000 esUVCUSBStringLangIDDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:662    .rodata.esUVCUSBStringLangIDDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:675    .rodata.esUVCUSBManufactureDscr:00000000 esUVCUSBManufactureDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:672    .rodata.esUVCUSBManufactureDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:707    .rodata.esUVCUSBProductDscr:00000000 esUVCUSBProductDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:704    .rodata.esUVCUSBProductDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:769    .rodata.esUVCUSBConfigSSDscr:00000000 esUVCUSBConfigSSDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:766    .rodata.esUVCUSBConfigSSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:791    .rodata.esUVCUSBConfigHSDscr:00000000 esUVCUSBConfigHSDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:788    .rodata.esUVCUSBConfigHSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:813    .rodata.esUVCUSBConfigFSDscr:00000000 esUVCUSBConfigFSDscr
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:810    .rodata.esUVCUSBConfigFSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:835    .data.glProbeCtrl:00000000 glProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:832    .data.glProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:867    .rodata.gl1080pProbeCtrl:00000000 gl1080pProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:864    .rodata.gl1080pProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:899    .rodata.glVga60ProbeCtrl:00000000 glVga60ProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:896    .rodata.glVga60ProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:931    .rodata.gl720pProbeCtrl:00000000 gl720pProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:928    .rodata.gl720pProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:963    .rodata.gl5MpProbeCtrl:00000000 gl5MpProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:960    .rodata.gl5MpProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:995    .rodata.glVga30ProbeCtrl:00000000 glVga30ProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:992    .rodata.glVga30ProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1027   .data.glStillProbeCtrl:00000000 glStillProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1024   .data.glStillProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1044   .data.cfgUvc5Mp15NoMclk:00000000 cfgUvc5Mp15NoMclk
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1041   .data.cfgUvc5Mp15NoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1064   .data.cfgUvc1080p30NoMclk:00000000 cfgUvc1080p30NoMclk
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1061   .data.cfgUvc1080p30NoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1084   .data.cfgUvc720p60NoMclk:00000000 cfgUvc720p60NoMclk
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1081   .data.cfgUvc720p60NoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1104   .data.cfgUvcVgaNoMclk:00000000 cfgUvcVgaNoMclk
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1101   .data.cfgUvcVgaNoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1124   .data.cfgUvcVga30NoMclk:00000000 cfgUvcVga30NoMclk
-C:\Users\wcheng\AppData\Local\Temp\ccorei9H.s:1121   .data.cfgUvcVga30NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:23     .rodata.esUVCUSB30DeviceDscr:00000000 esUVCUSB30DeviceDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:20     .rodata.esUVCUSB30DeviceDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:47     .rodata.esUVCUSB20DeviceDscr:00000000 esUVCUSB20DeviceDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:44     .rodata.esUVCUSB20DeviceDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:71     .rodata.esUVCUSBBOSDscr:00000000 esUVCUSBBOSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:68     .rodata.esUVCUSBBOSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:99     .rodata.esUVCUSBDeviceQualDscr:00000000 esUVCUSBDeviceQualDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:96     .rodata.esUVCUSBDeviceQualDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:115    .rodata.esUVCUSBSSConfigDscr:00000000 esUVCUSBSSConfigDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:112    .rodata.esUVCUSBSSConfigDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:439    .rodata.esUVCUSBHSConfigDscr:00000000 esUVCUSBHSConfigDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:436    .rodata.esUVCUSBHSConfigDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:650    .rodata.esUVCUSBFSConfigDscr:00000000 esUVCUSBFSConfigDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:647    .rodata.esUVCUSBFSConfigDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:665    .rodata.esUVCUSBStringLangIDDscr:00000000 esUVCUSBStringLangIDDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:662    .rodata.esUVCUSBStringLangIDDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:675    .rodata.esUVCUSBManufactureDscr:00000000 esUVCUSBManufactureDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:672    .rodata.esUVCUSBManufactureDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:707    .rodata.esUVCUSBProductDscr:00000000 esUVCUSBProductDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:704    .rodata.esUVCUSBProductDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:769    .rodata.esUVCUSBConfigSSDscr:00000000 esUVCUSBConfigSSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:766    .rodata.esUVCUSBConfigSSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:791    .rodata.esUVCUSBConfigHSDscr:00000000 esUVCUSBConfigHSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:788    .rodata.esUVCUSBConfigHSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:813    .rodata.esUVCUSBConfigFSDscr:00000000 esUVCUSBConfigFSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:810    .rodata.esUVCUSBConfigFSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:835    .data.glProbeCtrl:00000000 glProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:832    .data.glProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:867    .rodata.gl1080pProbeCtrl:00000000 gl1080pProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:864    .rodata.gl1080pProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:899    .rodata.glVga60ProbeCtrl:00000000 glVga60ProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:896    .rodata.glVga60ProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:931    .rodata.gl720pProbeCtrl:00000000 gl720pProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:928    .rodata.gl720pProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:963    .rodata.gl5MpProbeCtrl:00000000 gl5MpProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:960    .rodata.gl5MpProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:995    .rodata.glVga30ProbeCtrl:00000000 glVga30ProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:992    .rodata.glVga30ProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1027   .data.glStillProbeCtrl:00000000 glStillProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1024   .data.glStillProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1044   .data.cfgUvc5Mp15NoMclk:00000000 cfgUvc5Mp15NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1041   .data.cfgUvc5Mp15NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1064   .data.cfgUvc1080p30NoMclk:00000000 cfgUvc1080p30NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1061   .data.cfgUvc1080p30NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1084   .data.cfgUvc720p60NoMclk:00000000 cfgUvc720p60NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1081   .data.cfgUvc720p60NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1104   .data.cfgUvcVgaNoMclk:00000000 cfgUvcVgaNoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1101   .data.cfgUvcVgaNoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1124   .data.cfgUvcVga30NoMclk:00000000 cfgUvcVga30NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccsOLDsc.s:1121   .data.cfgUvcVga30NoMclk:00000000 $d
                            .group:00000000 wm4.1.29463082a45126943f020ea30bda05c8
                            .group:00000000 wm4.newlib.h.8.384a112feabb3bef7b573ae48cde2e3b
                            .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7
