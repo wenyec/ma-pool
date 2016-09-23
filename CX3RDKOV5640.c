@@ -33,6 +33,9 @@
 
 #include "CX3OV5640Lib.h"
 #include "CX3RDKOV5640.h"
+#include "sensor.h"
+#include "cmdqu.h"
+#include "uvc.h"
 
 /* Event generated on Timer overflow*/
 #define ES_TIMER_RESET_EVENT		(1<<4)
@@ -54,6 +57,12 @@
 //#define VISDebug
 
 /*************End***************/
+
+/******* The Global Variables from FX3 code *******/
+//VdRingBuf     cmdQu, statQu;
+CyU3PMutex    cmdQuMux, statQuMux, timMux, imgHdMux;
+
+/******************* End **************************/
 
 static CyU3PTimer        UvcTimer;
 
@@ -254,14 +263,14 @@ esUVCUvcApplnStart (void)
     CyU3PMipicsiWakeup();
 
     //TODO Change this function with "Sensor Specific" PowerUp function to PowerUp the sensor
-    esCamera_Power_Up();
+    //esCamera_Power_Up();  // remove the camera operations function for VIS mipi camera test -wcheng
 
     glMipiActive = CyTrue;
 
     //TODO Change this Function with "Sensor Specific" AutoFocus Function to Set the AutoFocus of the sensor
 	if(glStillCaptureStart!= CyTrue)
 	{
-		if(g_IsAutoFocus)
+		if(0&&g_IsAutoFocus)// disable the auto focus for VIS camera. -wcheng
 			esOV5640_SetAutofocus(g_IsAutoFocus);
 	}
     return CY_U3P_SUCCESS;
@@ -284,7 +293,7 @@ esUVCUvcApplnStop(void)
     status = CyU3PMipicsiSleep();
 
     //TODO Change this function with "Sensor Specific" PowerDown function to PowerDown the sensor
-    esCamera_Power_Down();
+    //esCamera_Power_Down();  // remove the camera operations function for VIS mipi camera test -wcheng
 
     glMipiActive = CyFalse;
 
@@ -595,7 +604,7 @@ void esSetCameraResolution(uint8_t FrameIndex)
 		if(FrameIndex == 0x01)
 		{
 			/* Write 1080pSettings */
-			status = CyU3PMipicsiSetIntfParams (&cfgUvc1080p30NoMclk, CyFalse);
+			status = CyU3PMipicsiSetIntfParams (&cfgUvc1080p30NoMclk, CyTrue/*CyFalse*/);
 			if (status != CY_U3P_SUCCESS)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS1 Err = 0x%x", status);
@@ -605,7 +614,7 @@ void esSetCameraResolution(uint8_t FrameIndex)
 		else if(FrameIndex == 0x02)
 		{
 			/* Write VGA Settings */
-			status = CyU3PMipicsiSetIntfParams (&cfgUvcVga30NoMclk, CyFalse);
+			status = CyU3PMipicsiSetIntfParams (&cfgUvcVga30NoMclk, CyTrue/*CyFalse*/);
 			if (status != CY_U3P_SUCCESS)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams FS Err = 0x%x", status);
@@ -615,16 +624,16 @@ void esSetCameraResolution(uint8_t FrameIndex)
 		else if(FrameIndex == 0x03)
 		{
 			/* Write 720pSettings */
-			status = CyU3PMipicsiSetIntfParams (&cfgUvc720p60NoMclk, CyFalse);
+			status = CyU3PMipicsiSetIntfParams (&cfgUvc720p60NoMclk, CyTrue/*CyFalse*/);
 			if (status != CY_U3P_SUCCESS)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS2 Err = 0x%x", status);
 			}
-			esOV5640_VGA_config();//esOV5640_720P_config(); //for experiment
+			//esOV5640_VGA_config();//esOV5640_720P_config(); //for experiment
 		}
 		else if(FrameIndex == 0x04)
 		{
-			status = CyU3PMipicsiSetIntfParams (&cfgUvc5Mp15NoMclk, CyFalse);
+			status = CyU3PMipicsiSetIntfParams (&cfgUvc5Mp15NoMclk, CyTrue/*CyFalse*/);
 			if (status != CY_U3P_SUCCESS)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS2 Err = 0x%x", status);
@@ -935,6 +944,7 @@ esUVCUvcApplnUSBSetupCB (
             isHandled = CyTrue;
             /* Respond to VC_REQUEST_ERROR_CODE_CONTROL and stall every other request as this example does not support
                any of the Video Control features */
+#if 0 /* the two controls handler test */
             if((wIndex == 0x200) && (wValue == 0x200))/*Brightness*/
             {
             	switch(bRequest)
@@ -948,14 +958,35 @@ esUVCUvcApplnUSBSetupCB (
 					}
 					break;
             	case ES_UVC_USB_GET_MIN_REQ:
+					glGet_Info=0x00;
+					status = CyU3PUsbSendEP0Data(2,&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
             	case ES_UVC_USB_GET_MAX_REQ:
+					glGet_Info=0xFF;
+					status = CyU3PUsbSendEP0Data(2,&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
             	case ES_UVC_USB_GET_RES_REQ:
+					glGet_Info=0x01;
+					status = CyU3PUsbSendEP0Data(2,&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
             	case ES_UVC_USB_GET_CUR_REQ:
             	case ES_UVC_USB_GET_DEF_REQ:
             		RequestOption = (bRequest & 0x0F);
 
             		//TODO Change this function with the "Sensor specific" function to Service all the GET requests for brightness Control
-            		gl16GetControl = esOV5640_GetBrightness(RequestOption);
+            		gl16GetControl = SensorGetControl(AExReferleveReg0, I2C_EAGLESDP_ADDR);//esOV5640_GetBrightness(RequestOption);
             		status = CyU3PUsbSendEP0Data(2,(uint8_t*)&gl16GetControl);
 					if (status != CY_U3P_SUCCESS)
 					{
@@ -969,7 +1000,7 @@ esUVCUvcApplnUSBSetupCB (
 						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
 					}
             		//TODO Change this function with the "Sensor specific" function to Service the SET request for brightness Control & write the brightness settings into the sensor
-					esOV5640_SetBrightness((int8_t)gl16SetControl);
+            		SensorSetControl(AExReferleveReg0, I2C_EAGLESDP_ADDR, (int8_t)gl16SetControl);//esOV5640_SetBrightness((int8_t)gl16SetControl);
 					break;
             	}
             }
@@ -993,7 +1024,7 @@ esUVCUvcApplnUSBSetupCB (
 				case ES_UVC_USB_GET_DEF_REQ:
 					RequestOption = (bRequest & 0x0F);
 					//TODO Change this function with the "Sensor specific" function to Service all the GET requests for AutoExposure Control
-					gl8GetControl = esOV5640_GetAutoExposure(RequestOption);
+					gl8GetControl = SensorGetControl(AExModeReg, I2C_EAGLESDP_ADDR);//esOV5640_GetAutoExposure(RequestOption);
 					status = CyU3PUsbSendEP0Data(1,(uint8_t*)&gl8GetControl);
 					if (status != CY_U3P_SUCCESS)
 					{
@@ -1008,14 +1039,23 @@ esUVCUvcApplnUSBSetupCB (
 					}
 					//TODO Change this function with the "Sensor specific" function to Service the SET request for AutoExposure Control & write AutoExposure settings into the sensor
 				//	CyU3PDebugPrint (4, "\n\rAuto Exposure= %d",gl8SetControl);
-					esOV5640_SetAutoExposure(gl8SetControl);
+					SensorSetControl(AExModeReg, I2C_EAGLESDP_ADDR, (int8_t)gl16SetControl);//esOV5640_SetAutoExposure(gl8SetControl);
 					break;
 				}
 			}
-            else if((wIndex == 0x200) && (wValue == 0x300))/*Contrast*/
+            else if((wIndex == 0x300) && (wValue == 0x300))/*Mirror (Contrast)*/
             {
             	switch(bRequest)
 				{
+            	case CY_FX_USB_UVC_GET_LEN_REQ:
+					glGet_Info=0x02;
+					status = CyU3PUsbSendEP0Data(2, &glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					CyU3PDebugPrint (4, "\n\rUSB_Ext: Mirror SendEP0Data = %d data %d", status, glGet_Info);
+					break;
 				case ES_UVC_USB_GET_INFO_REQ:
 					glGet_Info=0x03;
 					status = CyU3PUsbSendEP0Data(1,&glGet_Info);
@@ -1025,13 +1065,34 @@ esUVCUvcApplnUSBSetupCB (
 					}
 					break;
 				case ES_UVC_USB_GET_MIN_REQ:
+					glGet_Info=0x00;
+					status = CyU3PUsbSendEP0Data(2,&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
 				case ES_UVC_USB_GET_MAX_REQ:
+					glGet_Info=0x03;
+					status = CyU3PUsbSendEP0Data(2,&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
 				case ES_UVC_USB_GET_RES_REQ:
+					glGet_Info=0x01;
+					status = CyU3PUsbSendEP0Data(2,&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
 				case ES_UVC_USB_GET_CUR_REQ:
 				case ES_UVC_USB_GET_DEF_REQ:
 					RequestOption = (bRequest & 0x0F);
 					//TODO Change this function with the "Sensor specific" function to Service all the GET requests for Contrast Control
-					gl16GetControl = esOV5640_GetContrast(RequestOption);
+					gl16GetControl = SensorGetControl(MirrModeReg, I2C_EAGLESDP_ADDR);//esOV5640_GetContrast(RequestOption);
 					status = CyU3PUsbSendEP0Data(2,(uint8_t*)&gl16GetControl);
 					if (status != CY_U3P_SUCCESS)
 					{
@@ -1045,11 +1106,11 @@ esUVCUvcApplnUSBSetupCB (
 						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
 					}
 					//TODO Change this function with the "Sensor specific" function to Service the SET request for Contrast Control & write Contrast settings into the sensor
-					esOV5640_SetContrast((int8_t)gl16SetControl);
+					SensorSetControl(MirrModeReg, I2C_EAGLESDP_ADDR, (int8_t)gl16SetControl);//esOV5640_SetContrast((int8_t)gl16SetControl);
 					break;
 				}
             }
-            else if((wIndex == 0x100) && (wValue == 0x400))/*Manual Exposure*/
+            else if(0&&(wIndex == 0x100) && (wValue == 0x400))/*Manual Exposure*/
 			{
             	//CyU3PDebugPrint (4, "\n\rManual Exposure ");
 				switch(bRequest)
@@ -1088,7 +1149,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x200) && (wValue == 0x600))/*Hue*/
+            else if(0&&(wIndex == 0x200) && (wValue == 0x600))/*Hue*/
 			{
 				switch(bRequest)
 				{
@@ -1125,7 +1186,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x100) && (wValue == 0x600))/*Manual Focus*/
+            else if(0&&(wIndex == 0x100) && (wValue == 0x600))/*Manual Focus*/
 			{
             	//CyU3PDebugPrint (4, "\n\rManual Focus ");
 				switch(bRequest)
@@ -1165,7 +1226,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x200) && (wValue == 0x700))/*Saturation*/
+            else if(0&&(wIndex == 0x200) && (wValue == 0x700))/*Saturation*/
 			{
 				switch(bRequest)
 				{
@@ -1202,7 +1263,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x200) && (wValue == 0x800))/*Sharpness*/
+            else if(0&&(wIndex == 0x200) && (wValue == 0x800))/*Sharpness*/
 			{
 				switch(bRequest)
 				{
@@ -1239,7 +1300,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x100) && (wValue == 0x800))/*Auto Focus*/
+            else if(0&&(wIndex == 0x100) && (wValue == 0x800))/*Auto Focus*/
 			{
             	CyU3PDebugPrint (4, "\n\rAuto Focus");
 				switch(bRequest)
@@ -1279,7 +1340,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x200) && (wValue == 0xA00))/*White Balance manual*/
+            else if(0&&(wIndex == 0x200) && (wValue == 0xA00))/*White Balance manual*/
 			{
 				switch(bRequest)
 				{
@@ -1292,8 +1353,29 @@ esUVCUvcApplnUSBSetupCB (
 					}
 					break;
 				case ES_UVC_USB_GET_MIN_REQ:
+					glGet_Info=0x00;
+					status = CyU3PUsbSendEP0Data(2,(uint8_t*)&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
 				case ES_UVC_USB_GET_MAX_REQ:
+					glGet_Info=0xFF;
+					status = CyU3PUsbSendEP0Data(2,(uint8_t*)&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
 				case ES_UVC_USB_GET_RES_REQ:
+					glGet_Info=0x1;
+					status = CyU3PUsbSendEP0Data(2,(uint8_t*)&glGet_Info);
+					if (status != CY_U3P_SUCCESS)
+					{
+						CyU3PDebugPrint (4, "\n\rUSBStpCB:VCI SendEP0Data = %d", status);
+					}
+					break;
 				case ES_UVC_USB_GET_CUR_REQ:
 				case ES_UVC_USB_GET_DEF_REQ:
 					RequestOption = (bRequest & 0x0F);
@@ -1316,7 +1398,7 @@ esUVCUvcApplnUSBSetupCB (
 					break;
 				}
 			}
-            else if((wIndex == 0x200) && (wValue == 0xB00))/*White Balance Auto*/
+            else if(0&&(wIndex == 0x200) && (wValue == 0xB00))/*White Balance Auto*/
 			{
 				switch(bRequest)
 				{
@@ -1364,6 +1446,32 @@ esUVCUvcApplnUSBSetupCB (
             }
             else
                 CyU3PUsbStall(0,CyTrue, CyTrue);
+#else
+            /* the new UVC control requests handler */
+        	switch ((wIndex >> 8))
+            {
+
+                case CY_FX_UVC_PROCESSING_UNIT_ID:
+                    UVCHandleProcessingUnitRqts (wValue, bRequest);
+                    break;
+                case CY_FX_UVC_EXTENSION_UNIT_ID:
+                    UVCHandleExtensionUnitRqts (wValue, bRequest);
+                    break;
+                case CY_FX_UVC_CAMERA_TERMINAL_ID:
+                    //UVCHandleCameraTerminalRqts ();
+                    //break;
+                case CY_FX_UVC_INTERFACE_CTRL:
+                    //UVCHandleInterfaceCtrlRqts ();
+                    //break;
+
+                default:
+                    /* Unsupported request. Fail by stalling the control endpoint. */
+                    CyU3PUsbStall (0, CyTrue, CyFalse);
+                    break;
+            }
+        	CyU3PDebugPrint (4, "\n\rUSBStpCB:control interface wIndex = 0x%x wValue = 0x%x bRequest = 0x%x", wIndex, wValue, bRequest);
+        	/* the end of the controls handler */
+#endif
         }
     }
     return isHandled;
@@ -1711,7 +1819,7 @@ esUVCUvcApplnInit (void)
 #ifdef VISDebug
     CyU3PDebugPrint (4, "\n\rAppInit:MipicsiInit");
 #endif
-    status = CyU3PMipicsiSetIntfParams(&cfgUvcVgaNoMclk, CyFalse);
+    status = CyU3PMipicsiSetIntfParams(&cfgUvcVgaNoMclk, CyTrue/*CyFalse*/);
     if (status != CY_U3P_SUCCESS)
     {
         CyU3PDebugPrint (4, "\n\rAppInit:MipicsiSetIntfParams Err = 0x%x",status);
@@ -1833,7 +1941,7 @@ esUVCUvcAppThread_Entry (
             {
                 CyU3PMipicsiWakeup();
                 //TODO Change this function with "Sensor Specific" PowerUp function to PowerUp the sensor
-                esCamera_Power_Up();
+                //esCamera_Power_Up();  // remove the camera operations function for VIS mipi camera test -wcheng
 #ifdef VISDebug
     CyU3PDebugPrint (4, "\n\rES_USB_SUSP_EVENT_FLAG: esCamera_Power_Up");
 #endif
@@ -1852,16 +1960,21 @@ esUVCUvcAppThread_Entry (
 CyFxApplicationDefine (
         void)
 {
-    void *ptr = NULL;
+    void *ptrUvc = NULL, *ptrSen = NULL;
     uint32_t retThrdCreate = CY_U3P_SUCCESS;
+    VdRingBuf *cmdQuptr = &cmdQu, *statQuptr = &statQu;
+    /* Create/initialize Ring buffers for Sensor control */
+    char *cmdName = "SenCmdQue", *StatName = "SenStatQue";
+    cmdQu = cmdbufCreate(MAXCMD, cmdName, CMDQU0, &cmdQuMux);
+	cmdquInit(cmdQuptr);
 
     /* Allocate the memory for the thread and create the thread */
-    ptr = CyU3PMemAlloc (UVC_APP_THREAD_STACK);
+    ptrUvc = CyU3PMemAlloc (UVC_APP_THREAD_STACK);
     retThrdCreate = CyU3PThreadCreate (&uvcAppThread,   /* UVC Thread structure */
             "30:UVC_app_thread",         /* Thread Id and name */
             esUVCUvcAppThread_Entry,          /* UVC Application Thread Entry function */
             0,                           /* No input parameter to thread */
-            ptr,                         /* Pointer to the allocated thread stack */
+            ptrUvc,                         /* Pointer to the allocated thread stack */
             UVC_APP_THREAD_STACK,        /* UVC Application Thread stack size */
             UVC_APP_THREAD_PRIORITY,     /* UVC Application Thread priority */
             UVC_APP_THREAD_PRIORITY,     /* Pre-emption threshold */
@@ -1881,6 +1994,30 @@ CyFxApplicationDefine (
         while(1);
     }
 
+    ptrSen = CyU3PMemAlloc (UVC_APP_THREAD_STACK);
+    retThrdCreate = CyU3PThreadCreate (&SenAppThread,   /* UVC Thread structure */
+            "31:Sen_ctrl_thread",         /* Thread Id and name */
+            SenAppThread_Entry,          /* UVC Application Thread Entry function */
+            0,                           /* No input parameter to thread */
+            ptrSen,                         /* Pointer to the allocated thread stack */
+            UVC_APP_THREAD_STACK,        /* UVC Application Thread stack size */
+            UVC_APP_THREAD_PRIORITY,     /* UVC Application Thread priority */
+            UVC_APP_THREAD_PRIORITY,     /* Pre-emption threshold */
+            CYU3P_NO_TIME_SLICE,         /* No time slice for the application thread */
+            CYU3P_AUTO_START             /* Start the Thread immediately */
+            );
+
+    /* Check the return code */
+    if (retThrdCreate != 0)
+    {
+        /* Thread Creation failed with the error code retThrdCreate */
+
+        /* Add custom recovery or debug actions here */
+
+        /* Application cannot continue */
+        /* Loop indefinitely */
+        while(1);
+    }
     /* Create GPIO application event group */
     retThrdCreate = CyU3PEventCreate(&glTimerEvent);
     if (retThrdCreate != 0)

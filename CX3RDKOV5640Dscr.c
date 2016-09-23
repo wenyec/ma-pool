@@ -107,7 +107,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     /* Configuration Descriptor*/
     0x09,                               /* Descriptor Size */
     CY_U3P_USB_CONFIG_DESCR,            /* Configuration Descriptor Type */
-    0x3E, 0x01,                         /* Length of this descriptor and all sub descriptors */
+    0x3E, 0x01,//0x3D, 0x01,                         /* Length of this descriptor and all sub descriptors */
     0x02,                               /* Number of interfaces */
     0x01,                               /* Configuration number */
     0x03,                               /* Configuration string index */
@@ -163,14 +163,14 @@ const uint8_t esUVCUSBSSConfigDscr[] =
 	0x2A,0x00,0x02,                 	/* No controls supported */
 
     /* Processing Unit Descriptor */
-    0x0D,                               /* Descriptor size */
+    0x0D,//0x0C,                               /* Descriptor size */
     ES_UVC_CS_INTRFC_DESCR,                /* Class specific interface desc type */
     0x05,                               /* Processing Unit Descriptor type: VC_PROCESSING_UNIT*/
     0x02,                               /* ID of this unit */
     0x01,                               /* Source ID: 1: Conencted to input terminal */
     0x00, 0x40,                         /* Digital multiplier */
     0x03,                               /* Size of controls field for this terminal: 3 bytes */
-	0x5F,0x10,0x00,                 	/* No controls supported */
+    0xD3,0x00,0x00,//0x5F,0x10,0x00,                 	/* No controls supported */
     0x00,                               /* String desc index: Not used */
     0x00,                               /* Analog Video Standards Supported: None */
 
@@ -179,15 +179,15 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     ES_UVC_CS_INTRFC_DESCR,                /* Class specific interface desc type */
     0x06,                               /* Extension Unit Descriptor type */
     0x03,                               /* ID of this terminal */
-    0xFF, 0xFF, 0xFF, 0xFF,             /* 16 byte GUID */
-    0xFF, 0xFF, 0xFF, 0xFF,
-    0xFF, 0xFF, 0xFF, 0xFF,
-    0xFF, 0xFF, 0xFF, 0xFF,
-    0x00,                               /* Number of controls in this terminal */
+    0x7A,0xCA,0x57,0x37,				/* VIS Extention GUID {3757CA7A-1AA3-495b-968D-8E361F967650}*/
+    0xA3,0x1A,0x5B,0x49,
+    0x96,0x8D,0x8E,0x36,
+    0x1F,0x96,0x76,0x50,
+    0x04,                               /* Number of controls in this terminal */
     0x01,                               /* Number of input pins in this terminal */
     0x02,                               /* Source ID : 2 : Connected to Proc Unit */
     0x03,                               /* Size of controls field for this terminal : 3 bytes */
-    0x00, 0x00, 0x00,                   /* No controls supported */
+    0x05, 0x82, 0x00,                   /* No controls supported */
     0x00,                               /* String descriptor index : Not used */
 
     /* Output Terminal Descriptor */
@@ -567,18 +567,18 @@ const uint8_t esUVCUSBManufactureDscr[] =
 {
 	0x1A,                           /* Descriptor size */
 	CY_U3P_USB_STRING_DESCR,        /* Device descriptor type */
+	'V',0x00,
+	'i',0x00,
+	'd',0x00,
 	'e',0x00,
-	'-',0x00,
-	'c',0x00,
 	'o',0x00,
-	'n',0x00,
-	's',0x00,
+	'l',0x00,
+	'o',0x00,
+	'g',0x00,
 	'y',0x00,
-	's',0x00,
-	't',0x00,
-	'e',0x00,
-	'm',0x00,
-	's',0x00
+	'I',0x00,
+	'n',0x00,
+	'c',0x00
 };
 
 /* Standard product string descriptor */
@@ -586,21 +586,21 @@ const uint8_t esUVCUSBProductDscr[] =
 {
 	0x38,                           /* Descriptor Size */
 	CY_U3P_USB_STRING_DESCR,        /* Device descriptor type */
-	'e',0x00,
+	'V',0x00,
+	'I',0x00,
+	'S',0x00,
 	'-',0x00,
-	'c',0x00,
-	'o',0x00,
-	'n',0x00,
-	'\'',0x00,
-	's',0x00,
-	' ',0x00,
 	'C',0x00,
 	'X',0x00,
 	'3',0x00,
 	' ',0x00,
-	'R',0x00,
-	'D',0x00,
-	'K',0x00,
+	'M',0x00,
+	'I',0x00,
+	'P',0x00,
+	'I',0x00,
+	'7',0x00,
+	'2',0x00,
+	'0',0x00,
 	' ',0x00,
 	'w',0x00,
 	'i',0x00,
