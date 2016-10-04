@@ -1144,11 +1144,11 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 							 glEp0Buffer[0] = pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo;//ext_control array;
 							 glEp0Buffer[2] = pEXTSenCtrl[CtrlID - 0x10]->UVCCurVHi;
 			 	 		 }else{
-			 	 			glEp0Buffer[0] = SensorGetControl(RegAdd0, devAdd);
-			 	 			glEp0Buffer[0] = glEp0Buffer[0]&0x3; // 1:0 for Aex Mode
-			 	 			pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo = glEp0Buffer[0];
+			 	 			//glEp0Buffer[0] = SensorGetControl(RegAdd0, devAdd);//moved in CX3 demo
+			 	 			//glEp0Buffer[0] = glEp0Buffer[0]&0x3; // 1:0 for Aex Mode
+			 	 			//pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo = glEp0Buffer[0];
 
-			 	 			glEp0Buffer[2] = SensorGetControl(RegAdd1, devAdd);
+			 	 			glEp0Buffer[2] = SensorGetControl(RegAdd1, devAdd); //only using gain control Reg.0x03
 			 	 			pEXTSenCtrl[CtrlID - 0x10]->UVCCurVHi = glEp0Buffer[2];
 			 	 			//curFlag[CtrlID] = CyTrue;
 			 	 		 }
@@ -1353,12 +1353,12 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 					 case ShapCtlID7:
 						 if(curFlag[CtrlID]){
 			 	 				 glEp0Buffer[0] = pPUCSenCtrl[CtrlID]->UVCCurVLo;//ext_control array;
-			 	 				 glEp0Buffer[1] = pPUCSenCtrl[CtrlID]->UVCCurVHi;
+			 	 				 glEp0Buffer[1] = pPUCSenCtrl[CtrlID]->UVCCurVHi;//unavailable
 			 	 				 sendData = glEp0Buffer[0];
 			 	 		 }else{
 			 	 			 if(Len == 2)
 			 	 			 {
-			 	 				 glEp0Buffer[0] = SensorGetControl(RegAdd1, devAdd);
+			 	 				 glEp0Buffer[0] = SensorGetControl(RegAdd0, devAdd);//only Reg. 0x06
 			 	 				 pPUCSenCtrl[CtrlID]->UVCCurVLo = glEp0Buffer[0];
 			 	 				 glEp0Buffer[1] = 0;
 			 	 				 pPUCSenCtrl[CtrlID]->UVCCurVHi = glEp0Buffer[1];
@@ -1627,16 +1627,16 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 							 break;
 				 	 	 case ExtAexModCtlID9://4byte
 							 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
-							 if(pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo != Data0)
+							 if(0&&(pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo != Data0))//unavilable for CX3 Demo
 							 {
 								 pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo = Data0;//exposure mode (assume b3:2=00, no BLC window). CtrlParArry[CtrlID][13]
 								 Data0 = Data0 | (EXTShutter.UVCCurVLo << 4);
 								 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0, dataIdx);  //set first byte
 								 dataIdx++;
 							 }
-							 if(pEXTSenCtrl[CtrlID - 0x10]->UVCCurVHi != Data1){
+							 if(1||(pEXTSenCtrl[CtrlID - 0x10]->UVCCurVHi != Data1)){
 								 pEXTSenCtrl[CtrlID - 0x10]->UVCCurVHi = Data1;//AGC. CtrlParArry[CtrlID][14]
-								 if(Data0 == 2 || Data0 == 3){
+								 if(1 || Data0 == 2 || Data0 == 3){
 									 cmdSet(cmdQuptr, CtrlID, RegAdd1, devAdd, Data1, dataIdx);  //AGC
 								 }
 							 }
@@ -1649,13 +1649,18 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 					 	 case ExtShutCtlID0: //special!!
 							 pEXTSenCtrl[CtrlID - 0x10]->UVCCurVLo = Data0; //CtrlParArry[CtrlID][13] save new setting
 	#if 1	// register setting directly
-						     if((EXTAexModGainlev.UVCCurVLo&0x3) != 0)//based on the Aex Mode 2 has been masked in viewer!!!
+						     if(0&&((EXTAexModGainlev.UVCCurVLo&0x3) != 0))//based on the Aex Mode 2 has been masked in viewer!!!
 						     {
 						    	 Data0 = (Data0 << 4) | (EXTAexModGainlev.UVCCurVLo);
 						    	 dataIdx = 0;
 								 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
 								 //cmdSet(cmdQuptr, CtrlID, RegAdd1, devAdd, 0x00, dataIdx);  //clean Axmode2 bit7
 								 //dataIdx++;
+								 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0, dataIdx);  //First
+								 CyU3PMutexPut(cmdQuptr->ringMux);  //release the command queue mutex
+						     }
+						     else{//for CX3 demo
+								 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
 								 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0, dataIdx);  //First
 								 CyU3PMutexPut(cmdQuptr->ringMux);  //release the command queue mutex
 						     }
@@ -1949,7 +1954,7 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 						 case ShapCtlID7: //for stand sharpness with edge enhancement in 5MP B/W.
 
 							 pPUCSenCtrl[CtrlID]->UVCCurVLo = Data0;
-							 if(Data0 != 0){
+							 if(0&&(Data0 != 0)){
 								 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
 	#ifdef COLOR
 								 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0, dataIdx);  //Second: set enhancement value.
@@ -1959,9 +1964,9 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 								 cmdSet(cmdQuptr, CtrlID, RegAdd1, devAdd, Data0, dataIdx);  //Second: set enhancement value.
 	#endif
 								 CyU3PMutexPut(cmdQuptr->ringMux);  //release the command queue mutex
-							 }else{
+							 }else{//only using Reg.0x06 for CX3 demo
 								 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
-								 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, 0x0, dataIdx);  //First: disable sharpness.
+								 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0/*0x0*/, dataIdx);  //First: disable sharpness.
 								 CyU3PMutexPut(cmdQuptr->ringMux);  //release the command queue mutex
 							 }
 							 pPUCSenCtrl[CtrlID]->AvailableF = CyTrue;

@@ -56,8 +56,8 @@
 #define BLCModeRegGain			0x11	// The BLC gain assigned to the BLC window
 #define BrightnessReg0   		0x00	// brightness RegAAdd0 [7:0]. devadd 0xc6
 #define BrightnessReg1   		0x01	// brightness RegAAdd1 [1:0] bit1 is sign bit
-#define ContrastReg				0x02//0x0d    // 5mpb/w: 0x0d org:x02	// devadd 0xc6
-#define MainsFreqReg 			0x07    // PAL:0 NTSC:1
+#define ContrastReg				0x07//0x0d    // 5mpb/w: 0x0d org:x02	// devadd 0xc6
+#define MainsFreqReg 			0x07//not enable    // PAL:0 NTSC:1
 #define HuectrlRegMg            0xdc    // hue regadd for Mg     devadd 0xc6
 #define HuectrlRegRed           0xdd    // hue regadd for red    devadd 0xc6
 #define HuectrlRegYel           0xde    // hue regadd for yellow devadd 0xc6

@@ -33,7 +33,9 @@ CX3RDKOV5640.d: ../CX3RDKOV5640.c \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h \
  ../CX3RDKOV5640.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3usbconst.h \
- C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcend.h
+ ../cmdqu.h \
+ C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcend.h \
+ ../sensor.h ../uvc.h
 
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3system.h:
 
@@ -103,4 +105,10 @@ C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc
 
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3usbconst.h:
 
+../cmdqu.h:
+
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcend.h:
+
+../sensor.h:
+
+../uvc.h:
