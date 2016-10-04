@@ -6,7 +6,10 @@
 C_SRCS += \
 ../CX3RDKOV5640.c \
 ../CX3RDKOV5640Dscr.c \
-../cyfxtx.c 
+../cmdqu.c \
+../cyfxtx.c \
+../sensor.c \
+../uvc.c 
 
 S_UPPER_SRCS += \
 ../cyfx_gcc_startup.S 
@@ -14,13 +17,19 @@ S_UPPER_SRCS += \
 OBJS += \
 ./CX3RDKOV5640.o \
 ./CX3RDKOV5640Dscr.o \
+./cmdqu.o \
 ./cyfx_gcc_startup.o \
-./cyfxtx.o 
+./cyfxtx.o \
+./sensor.o \
+./uvc.o 
 
 C_DEPS += \
 ./CX3RDKOV5640.d \
 ./CX3RDKOV5640Dscr.d \
-./cyfxtx.d 
+./cmdqu.d \
+./cyfxtx.d \
+./sensor.d \
+./uvc.d 
 
 S_UPPER_DEPS += \
 ./cyfx_gcc_startup.d 

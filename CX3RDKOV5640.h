@@ -27,6 +27,7 @@
 #include "cyu3mipicsi.h"
 
 #include "cyu3externcstart.h"
+#include "cmdqu.h"
 
 /* This header file comprises of the UVC application constants and
  * the video frame configurations */
@@ -97,6 +98,7 @@
 #define ES_UVC_USB_GET_RES_REQ              	(uint8_t)(0x84)                 /* UVC GET_RES Request */
 #define ES_UVC_USB_GET_INFO_REQ             	(uint8_t)(0x86)                 /* UVC GET_INFO Request */
 #define ES_UVC_USB_GET_DEF_REQ					(uint8_t)(0x87)                 /* UVC GET_DEF Request */
+#define CY_FX_USB_UVC_GET_LEN_REQ     			(uint8_t)(0x85)         		/* UVC GET_LEN Request */
 
 #define ES_UVC_VS_PROBE_CONTROL                	(0x0100)                        /* Video Stream Probe Control Request */
 #define ES_UVC_VS_COMMIT_CONTROL               	(0x0200)                        /* Video Stream Commit Control Request */
@@ -142,7 +144,10 @@ extern CyU3PMipicsiCfg_t cfgUvc1080p30NoMclk, cfgUvc720p60NoMclk,  cfgUvcVgaNoMc
 
 
 CyU3PThread uvcAppThread;               	/* Primary application thread used for data transfer from the Mipi interface to USB*/
+CyU3PThread SenAppThread;					/* Sensor control thread used for implementing Sensor controls */
 CyU3PEvent glTimerEvent;                  	/* Application Event Group */
+VdRingBuf     cmdQu, statQu;
+extern CyU3PMutex    cmdQuMux, statQuMux, timMux, imgHdMux;
 
 
 #include "cyu3externcend.h"

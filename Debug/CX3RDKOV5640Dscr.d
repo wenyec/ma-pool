@@ -16,6 +16,7 @@ CX3RDKOV5640Dscr.d: ../CX3RDKOV5640Dscr.c ../CX3RDKOV5640.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3gpif.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3dma.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h \
+ ../cmdqu.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcend.h
 
 ../CX3RDKOV5640.h:
@@ -53,5 +54,7 @@ C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3dma.h:
 
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h:
+
+../cmdqu.h:
 
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcend.h:
