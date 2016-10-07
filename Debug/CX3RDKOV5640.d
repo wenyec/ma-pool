@@ -29,10 +29,9 @@ CX3RDKOV5640.d: ../CX3RDKOV5640.c \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3sib.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3gpif.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3dma.h \
- ..\..\CX3OV5640LIB\INC/CX3OV5640Lib.h \
- C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h \
  ../CX3RDKOV5640.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3usbconst.h \
+ C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h \
  ../cmdqu.h \
  C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcend.h \
  ../sensor.h ../uvc.h
@@ -97,13 +96,11 @@ C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc
 
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3dma.h:
 
-..\..\CX3OV5640LIB\INC/CX3OV5640Lib.h:
-
-C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h:
-
 ../CX3RDKOV5640.h:
 
 C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3usbconst.h:
+
+C:\Program\ Files\ (x86)\Cypress\EZ-USB\ FX3\ SDK\1.3\\firmware\u3p_firmware\inc/cyu3externcstart.h:
 
 ../cmdqu.h:
 

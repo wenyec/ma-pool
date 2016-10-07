@@ -155,10 +155,10 @@ typedef struct stateDescriptor_t{
 typedef struct RingBuffer_t{
 	uint8_t     ringbufID;
 	char        *bufferName;
-	VdcmdDes        *startAdd;
-	VdcmdDes        *endAdd;
-	VdcmdDes        *readPtr;
-	VdcmdDes        *writePtr;
+	VdcmdDes    *startAdd;
+	VdcmdDes    *endAdd;
+	VdcmdDes    *readPtr;
+	VdcmdDes    *writePtr;
 	uint16_t    numUnit;
 	uint8_t     bugFlag;
 	CyU3PMutex  *ringMux;

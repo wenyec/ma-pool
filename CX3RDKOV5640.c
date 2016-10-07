@@ -31,7 +31,7 @@
 #include "sock_regs.h"
 #include "cyu3mipicsi.h"
 
-#include "CX3OV5640Lib.h"
+//#include "CX3OV5640Lib.h"
 #include "CX3RDKOV5640.h"
 #include "sensor.h"
 #include "cmdqu.h"
@@ -271,7 +271,7 @@ esUVCUvcApplnStart (void)
 	if(glStillCaptureStart!= CyTrue)
 	{
 		if(0&&g_IsAutoFocus)// disable the auto focus for VIS camera. -wcheng
-			esOV5640_SetAutofocus(g_IsAutoFocus);
+			;//esOV5640_SetAutofocus(g_IsAutoFocus);
 	}
     return CY_U3P_SUCCESS;
 }
@@ -609,7 +609,7 @@ void esSetCameraResolution(uint8_t FrameIndex)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS1 Err = 0x%x", status);
 			}
-			esOV5640_1080P_config();
+			//esOV5640_1080P_config();
 		}
 		else if(FrameIndex == 0x02)
 		{
@@ -619,17 +619,19 @@ void esSetCameraResolution(uint8_t FrameIndex)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams FS Err = 0x%x", status);
 			}
-			esOV5640_VGA_config(); //for experiment
+			//esOV5640_VGA_config(); //for experiment
 		}
 		else if(FrameIndex == 0x03)
 		{
 			/* Write 720pSettings */
-			status = CyU3PMipicsiSetIntfParams (&cfgUvc720p60NoMclk, CyTrue/*CyFalse*/);
+			status = CyU3PMipicsiSetIntfParams (&cfgUvc720p60NoMclk, CyFalse);
 			if (status != CY_U3P_SUCCESS)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS2 Err = 0x%x", status);
 			}
 			//esOV5640_VGA_config();//esOV5640_720P_config(); //for experiment
+			//CyU3PThreadSleep(1000);
+			//SensorGetControl(0x02, 0x30);
 		}
 		else if(FrameIndex == 0x04)
 		{
@@ -638,7 +640,7 @@ void esSetCameraResolution(uint8_t FrameIndex)
 			{
 				CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams SS2 Err = 0x%x", status);
 			}
-			esOV5640_5MP_config();
+			//esOV5640_5MP_config();
 		}
 	}
 	/* High Speed USB Streams*/
@@ -650,14 +652,14 @@ void esSetCameraResolution(uint8_t FrameIndex)
 		{
 			CyU3PDebugPrint (4, "\n\rUSBStpCB:SetIntfParams HS Err = 0x%x", status);
 		}
-		esOV5640_VGA_config();
-		esOV5640_VGA_HS_config();
+		//esOV5640_VGA_config();
+		//esOV5640_VGA_HS_config();
 	}
 	/* Full Speed USB Streams*/
 	else
 	{
 		/* Write VGA Settings */
-		esOV5640_VGA_config();
+		//esOV5640_VGA_config();
 		status = CyU3PMipicsiSetIntfParams (&cfgUvcVga30NoMclk, CyFalse);
 		if (status != CY_U3P_SUCCESS)
 		{
@@ -874,6 +876,8 @@ esUVCUvcApplnUSBSetupCB (
     CyU3PDebugPrint (4, "\n\rApplnUSBSetupCB:ES_UVC_VS_COMMIT_CONTROL esUVCUvcApplnStart");
 #endif
 							}
+							//CyU3PThreadSleep(1000);
+							SensorGetControl(0x02, 0x30);
 						}
 					}
                 }
