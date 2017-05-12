@@ -107,7 +107,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     /* Configuration Descriptor*/
     0x09,                               /* Descriptor Size */
     CY_U3P_USB_CONFIG_DESCR,            /* Configuration Descriptor Type */
-    0x3E, 0x01,//0x3D, 0x01,                         /* Length of this descriptor and all sub descriptors */
+    0xE4, 0x00,//0x3E, 0x01,//0x3D, 0x01,                         /* Length of this descriptor and all sub descriptors */
     0x02,                               /* Number of interfaces */
     0x01,                               /* Configuration number */
     0x03,                               /* Configuration string index */
@@ -160,9 +160,15 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x00, 0x00,                         /* No optical zoom supported */
     0x00, 0x00,                         /* No optical zoom supported */
     0x03,                               /* Size of controls field for this terminal : 3 bytes */
-	0x2A,0x00,0x02,                 	/* No controls supported */
+	0x00,0x00,0x00,//0x2A,0x00,0x02,                 	/* No controls supported */
 
     /* Processing Unit Descriptor */
+	/*
+	Bit7	         Bit6	        Bit5	Bit4	    Bit3	    Bit2	    Bit1	    Bit0
+	WB Comp. Ctrl	 WB Temp. Ctrl	Gamma	Sharpness	Saturation	Hue Ctrl	Contrast	Brightness
+	Dig.ZmLmtCtrl	 Digital Zoom	WBCompA	WBTemp.A	Hue Auto	Main Freq.	Gain Ctrl	BLC Ctrl
+	N/A	         N/A	        N/A	    N/A	        N/A	        ContAuto	AnlgStaCtrl	AnalogVidCtrl
+	*/
     0x0D,//0x0C,                               /* Descriptor size */
     ES_UVC_CS_INTRFC_DESCR,                /* Class specific interface desc type */
     0x05,                               /* Processing Unit Descriptor type: VC_PROCESSING_UNIT*/
@@ -170,7 +176,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x01,                               /* Source ID: 1: Conencted to input terminal */
     0x00, 0x40,                         /* Digital multiplier */
     0x03,                               /* Size of controls field for this terminal: 3 bytes */
-    0xD3,0x00,0x00,//0x5F,0x10,0x00,                 	/* No controls supported */
+    0xFF,0x00,0x00,//0x5F,0x10,0x00,                 	/* No controls supported */
     0x00,                               /* String desc index: Not used */
     0x00,                               /* Analog Video Standards Supported: None */
 
@@ -238,7 +244,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     ES_UVC_CS_INTRFC_DESCR,                /* Class-specific VS I/f Type */
     0x01,                               /* Descriptor Subtype: Input Header */
     0x01,                               /* 1 format desciptor follows */
-    0xAB,0x00,                          /* Total size of Class specific VS descr */
+    0x51,0x00,//0xAB,0x00,                          /* Total size of Class specific VS descr */
     ES_UVC_EP_BULK_VIDEO,                  /* EP address for BULK video data: EP 3 IN */
     0x00,                               /* No dynamic format change supported */
     0x04,                               /* Output terminal ID : 4 */
@@ -253,7 +259,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     ES_UVC_CS_INTRFC_DESCR,                /* Class-specific VS interface Type */
     0x04,                               /* Subtype : VS_FORMAT_UNCOMPRESSED */
     0x01,                               /* Format desciptor index */
-    0x04,                               /* Number of Frame Descriptors that follow this descriptor: 3 */
+    0x01,//0x04,                               /* Number of Frame Descriptors that follow this descriptor: 3 */
 
     /* GUID, globally unique identifier used to identify streaming-encoding format: YUY2  */
     0x59, 0x55, 0x59, 0x32,             /*MEDIASUBTYPE_YUY2 GUID: 32595559-0000-0010-8000-00AA00389B71 */
@@ -261,12 +267,12 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x80, 0x00, 0x00, 0xAA,
     0x00, 0x38, 0x9B, 0x71,
     0x10,                               /* Number of bits per pixel: 16*/
-    0x03,                               /* Optimum Frame Index for this stream: 2 (720p) */
+    0x01,//0x03,                               /* Optimum Frame Index for this stream: 2 (720p) */
     0x00,                               /* X dimension of the picture aspect ratio; Non-interlaced */
     0x00,                               /* Y dimension of the pictuer aspect ratio: Non-interlaced */
     0x00,                               /* Interlace Flags: Progressive scanning, no interlace */
     0x00,                               /* duplication of the video stream restriction: 0 - no restriction */
-
+#if 0 //only keep 720 for CX3_720
     /* Class specific Uncompressed VS Frame Descriptor 1 - 1080p@30fps */
     0x1E,                               /* Descriptor size */
     ES_UVC_CS_INTRFC_DESCR,                /* Descriptor type*/
@@ -297,12 +303,12 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x0A, 0x8B, 0x02, 0x00,             /* Default frame interval (in 100ns units): (1/60)x10^7 */
     0x01,                               /* Frame interval type : No of discrete intervals */
     0x0A, 0x8B, 0x02, 0x00,             /* Frame interval 3: Same as Default frame interval */
-
+#endif
     /* Class specific Uncompressed VS frame descriptor 2 - 720p@ 60fps*/
     0x1E,                               /* Descriptor size */
     ES_UVC_CS_INTRFC_DESCR,                /* Descriptor type*/
     0x05,                               /* Subtype: Uncompressed frame interface*/
-    0x03,                               /* Frame Descriptor Index: 2 */
+    0x01,//0x03,                               /* Frame Descriptor Index: 2 */
     0x02,//0x00,                               /* No Still image capture method supported */
     0x00, 0x05,                         /* Width in pixel: 720 */
     0xD0, 0x02,                         /* Height in pixel: 1280 */
@@ -313,7 +319,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x01,                               /* Frame interval type : No of discrete intervals */
     0x0A, 0x8B, 0x02, 0x00,             /* Frame interval 3: Same as Default frame interval */
 
-
+#if 0 // only keep 720 for CX3_720
     /* Class specific Uncompressed VS frame descriptor 3 - 5MP@15fps*/
     0x1E,                               /* Descriptor size */
     ES_UVC_CS_INTRFC_DESCR,                /* Descriptor type*/
@@ -328,7 +334,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x2A, 0x2C, 0x0A, 0x00,             /* Default frame interval (in 100ns units): (1/15)x10^7 */
     0x01,                               /* Frame interval type : No of discrete intervals */
     0x2A, 0x2C, 0x0A, 0x00,             /* Frame interval 3: Same as Default frame interval */
-
+#endif
     /* Still image descriptor -YUV with QVGA resolution */
 	0x0A,
 	0x24,

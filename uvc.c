@@ -129,8 +129,8 @@ volatile static SensorCtrl PUCPLFreq =  //in 5MP b/w it is not used.
 //volatile static SensorCtrl PUCHueC;
 //{/*5*/HuectrlRegGr        , HuectrlRegBlu        , 2,    0,    0,  255,    0, 1, 0, 3, 0, 128, 0,   0,   0, I2C_DevAdd_C6,      CyTrue,  CyTrue, 0},  //Hue control
 volatile static SensorCtrl PUCHueC =
-		{HuectrlRegGr,		//Reg1: the command register address1
-		 HuectrlRegBlu,		//Reg2: the command register address2
+		{0x0D/*HuectrlRegGr*/,		//Reg1: the command register address1
+		 0x0D/*HuectrlRegBlu*/,		//Reg2: the command register address2
 		 2,					//UVCLn: the command length
 		 0,					//UVCMinLo: the command minimum value low byte
 		 0,					//UVCMinHi: the command minimum value high byte
@@ -151,8 +151,8 @@ volatile static SensorCtrl PUCHueC =
 //		{/*6*/SaturationRegR      , SaturationRegB       , 2,    0,    0,  100,    0, 1, 0, 3, 0,  50, 0,  50,   0, I2C_DevAdd_F2,      CyTrue,  CyTrue, 0},  //Saturation control
 //volatile static SensorCtrl PUCSaturation;
 volatile static SensorCtrl PUCSaturation =
-		{SaturationRegR,		//Reg1: the command register address1
-		 SaturationRegB,		//Reg2: the command register address2
+		{0x0C/*SaturationRegR*/,		//Reg1: the command register address1
+		 0x0C/*SaturationRegB*/,		//Reg2: the command register address2
 		 2,					//UVCLn: the command length
 		 0,					//UVCMinLo: the command minimum value low byte
 		 0,					//UVCMinHi: the command minimum value high byte
@@ -1858,17 +1858,17 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 							 break;
 						 case HueCtlID5://not being used
 							 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
-							 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, (Data0-GREEN_BASE), dataIdx);  //First
-							 dataIdx++;
-							 cmdSet(cmdQuptr, CtrlID, HuectrlRegMg, devAdd, (Data0-MAGENTA_BASE), dataIdx);  //Second
-							 dataIdx++;
-							 cmdSet(cmdQuptr, CtrlID, HuectrlRegYel, devAdd, (Data0-YELLOW_BASE), dataIdx);  //Third
-							 dataIdx++;
-							 cmdSet(cmdQuptr, CtrlID, HuectrlRegCy, devAdd, (Data0-CYAN_BASE), dataIdx);  //Fourth
-							 dataIdx++;
-							 cmdSet(cmdQuptr, CtrlID, HuectrlRegRed, devAdd, (Data0-RED_BASE), dataIdx);  //Fifth
-							 dataIdx++;
-							 cmdSet(cmdQuptr, CtrlID, RegAdd1, devAdd, (glEp0Buffer[0]-BLUE_BASE), dataIdx);   //Sixth
+							 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0/*(Data0-GREEN_BASE)*/, dataIdx);  //First
+							 //dataIdx++;
+							 //cmdSet(cmdQuptr, CtrlID, HuectrlRegMg, devAdd, (Data0-MAGENTA_BASE), dataIdx);  //Second
+							 //dataIdx++;
+							 //cmdSet(cmdQuptr, CtrlID, HuectrlRegYel, devAdd, (Data0-YELLOW_BASE), dataIdx);  //Third
+							 //dataIdx++;
+							 //cmdSet(cmdQuptr, CtrlID, HuectrlRegCy, devAdd, (Data0-CYAN_BASE), dataIdx);  //Fourth
+							 //dataIdx++;
+							 //cmdSet(cmdQuptr, CtrlID, HuectrlRegRed, devAdd, (Data0-RED_BASE), dataIdx);  //Fifth
+							 //dataIdx++;
+							 //cmdSet(cmdQuptr, CtrlID, RegAdd1, devAdd, (glEp0Buffer[0]-BLUE_BASE), dataIdx);   //Sixth
 							 CyU3PMutexPut(cmdQuptr->ringMux);  //release the command queue mutex
 
 							 pPUCSenCtrl[CtrlID]->UVCCurVLo = glEp0Buffer[0] - GREEN_BASE;
