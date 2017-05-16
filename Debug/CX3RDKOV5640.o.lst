@@ -1396,7 +1396,7 @@
  969 0298 FF2003E2 		and	r2, r3, #255
  970 029c 08319FE5 		ldr	r3, .L42+44
  971 02a0 0120C3E5 		strb	r2, [r3, #1]
- 476:../CX3RDKOV5640.c ****             	glFrameIndexToSet = glCurrentFrameIndex;
+ 476:../CX3RDKOV5640.c ****             	glFrameIndexToSet = glCurrentFrameIndex;  //for still test
  972              		.loc 1 476 0
  973 02a4 04319FE5 		ldr	r3, .L42+48
  974 02a8 0020D3E5 		ldrb	r2, [r3]	@ zero_extendqisi2
@@ -2868,7 +2868,7 @@
  877:../CX3RDKOV5640.c **** #endif
  878:../CX3RDKOV5640.c **** 							}
  879:../CX3RDKOV5640.c **** 							//CyU3PThreadSleep(1000);
- 880:../CX3RDKOV5640.c **** 							SensorGetControl(0x02, 0x30);
+ 880:../CX3RDKOV5640.c **** 							SensorGetControl(0x02, 0x30); //the start up mechanism is in the microcode.
  1985              		.loc 1 880 0
  1986 0560 0200A0E3 		mov	r0, #2
  1987 0564 3010A0E3 		mov	r1, #48
@@ -3109,7 +3109,7 @@
  2158 0744 010053E3 		cmp	r3, #1
  2159 0748 3200001A 		bne	.L88
  933:../CX3RDKOV5640.c **** 						{
- 934:../CX3RDKOV5640.c **** 							glStillSkip = 3;
+ 934:../CX3RDKOV5640.c **** 							glStillSkip = 3; //for still test
  2160              		.loc 1 934 0
  2161 074c 40319FE5 		ldr	r3, .L132+108
  2162 0750 0320A0E3 		mov	r2, #3
@@ -5884,23 +5884,23 @@
  3631              		.text
  3632              	.Letext0:
  3633              		.file 2 "c:\\program files (x86)\\cypress\\ez-usb fx3 sdk\\1.3\\arm gcc\\arm-none-eabi\\include\\s
- 3634              		.file 3 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 3635              		.file 4 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyfx
- 3636              		.file 5 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/tx_p
- 3637              		.file 6 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/tx_a
- 3638              		.file 7 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 3639              		.file 8 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 3640              		.file 9 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 3641              		.file 10 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu
- 3642              		.file 11 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu
- 3643              		.file 12 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu
- 3644              		.file 13 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu
+ 3634              		.file 3 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3ty
+ 3635              		.file 4 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyfx3_
+ 3636              		.file 5 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/tx_por
+ 3637              		.file 6 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/tx_api
+ 3638              		.file 7 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3dm
+ 3639              		.file 8 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3er
+ 3640              		.file 9 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3us
+ 3641              		.file 10 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3u
+ 3642              		.file 11 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3u
+ 3643              		.file 12 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3g
+ 3644              		.file 13 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3m
  3645              		.file 14 "../cmdqu.h"
  3646              		.file 15 "../CX3RDKOV5640.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 CX3RDKOV5640.c
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:17     .bss.glEp0Buffer:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:20     .bss.glEp0Buffer:00000000 glEp0Buffer
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:17     .bss.glEp0Buffer:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:20     .bss.glEp0Buffer:00000000 glEp0Buffer
                             *COM*:000000a8 uvcAppThread
                             *COM*:000000a8 SenAppThread
                             *COM*:00000028 glTimerEvent
@@ -5910,115 +5910,115 @@ C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:20     .bss.glEp0Buffer:00000000 g
                             *COM*:00000038 statQuMux
                             *COM*:00000038 timMux
                             *COM*:00000038 imgHdMux
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:32     .bss.UvcTimer:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:35     .bss.UvcTimer:00000000 UvcTimer
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:38     .text.UvcAppProgressTimer:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:40     .text.UvcAppProgressTimer:00000000 UvcAppProgressTimer
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:69     .text.UvcAppProgressTimer:00000028 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:78     .bss.glDMATxCount:00000000 glDMATxCount
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:75     .bss.glDMATxCount:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:85     .bss.glDmaDone:00000000 glDmaDone
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:82     .bss.glDmaDone:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:91     .bss.glActiveSocket:00000000 glActiveSocket
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:92     .bss.glActiveSocket:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:98     .data.doLpmDisable:00000000 doLpmDisable
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:95     .data.doLpmDisable:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:105    .bss.glHitFV:00000000 glHitFV
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:102    .bss.glHitFV:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:112    .bss.glMipiActive:00000000 glMipiActive
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:109    .bss.glMipiActive:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:119    .bss.glIsClearFeature:00000000 glIsClearFeature
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:116    .bss.glIsClearFeature:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:126    .bss.glPreviewStarted:00000000 glPreviewStarted
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:123    .bss.glPreviewStarted:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:133    .data.glUVCHeader:00000000 glUVCHeader
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:130    .data.glUVCHeader:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:32     .bss.UvcTimer:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:35     .bss.UvcTimer:00000000 UvcTimer
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:38     .text.UvcAppProgressTimer:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:40     .text.UvcAppProgressTimer:00000000 UvcAppProgressTimer
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:69     .text.UvcAppProgressTimer:00000028 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:78     .bss.glDMATxCount:00000000 glDMATxCount
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:75     .bss.glDMATxCount:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:85     .bss.glDmaDone:00000000 glDmaDone
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:82     .bss.glDmaDone:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:91     .bss.glActiveSocket:00000000 glActiveSocket
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:92     .bss.glActiveSocket:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:98     .data.doLpmDisable:00000000 doLpmDisable
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:95     .data.doLpmDisable:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:105    .bss.glHitFV:00000000 glHitFV
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:102    .bss.glHitFV:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:112    .bss.glMipiActive:00000000 glMipiActive
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:109    .bss.glMipiActive:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:119    .bss.glIsClearFeature:00000000 glIsClearFeature
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:116    .bss.glIsClearFeature:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:126    .bss.glPreviewStarted:00000000 glPreviewStarted
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:123    .bss.glPreviewStarted:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:133    .data.glUVCHeader:00000000 glUVCHeader
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:130    .data.glUVCHeader:00000000 $d
                             *COM*:00000020 glCommitCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:151    .data.glCurrentFrameIndex:00000000 glCurrentFrameIndex
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:151    .data.glCurrentFrameIndex:00000000 glCurrentFrameIndex
                             *COM*:00000020 glStillCommitCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:158    .data.glCurrentStillFrameIndex:00000000 glCurrentStillFrameIndex
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:164    .bss.glStillTriggerCtrl:00000000 glStillTriggerCtrl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:165    .bss.glStillTriggerCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:170    .bss.glFrameIndexToSet:00000000 glFrameIndexToSet
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:171    .bss.glFrameIndexToSet:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:177    .bss.glStillCaptureStart:00000000 glStillCaptureStart
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:174    .bss.glStillCaptureStart:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:184    .bss.glStillCaptured:00000000 glStillCaptured
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:181    .bss.glStillCaptured:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:190    .bss.glStillSkip:00000000 glStillSkip
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:191    .bss.glStillSkip:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:197    .bss.glIsApplnActive:00000000 glIsApplnActive
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:194    .bss.glIsApplnActive:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:204    .bss.glIsConfigured:00000000 glIsConfigured
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:201    .bss.glIsConfigured:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:211    .bss.glIsStreamingStarted:00000000 glIsStreamingStarted
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:208    .bss.glIsStreamingStarted:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:158    .data.glCurrentStillFrameIndex:00000000 glCurrentStillFrameIndex
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:164    .bss.glStillTriggerCtrl:00000000 glStillTriggerCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:165    .bss.glStillTriggerCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:170    .bss.glFrameIndexToSet:00000000 glFrameIndexToSet
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:171    .bss.glFrameIndexToSet:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:177    .bss.glStillCaptureStart:00000000 glStillCaptureStart
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:174    .bss.glStillCaptureStart:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:184    .bss.glStillCaptured:00000000 glStillCaptured
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:181    .bss.glStillCaptured:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:190    .bss.glStillSkip:00000000 glStillSkip
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:191    .bss.glStillSkip:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:197    .bss.glIsApplnActive:00000000 glIsApplnActive
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:194    .bss.glIsApplnActive:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:204    .bss.glIsConfigured:00000000 glIsConfigured
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:201    .bss.glIsConfigured:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:211    .bss.glIsStreamingStarted:00000000 glIsStreamingStarted
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:208    .bss.glIsStreamingStarted:00000000 $d
                             *COM*:000000e8 glChHandleUVCStream
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:219    .bss.ES_UVC_STREAM_BUF_SIZE:00000000 ES_UVC_STREAM_BUF_SIZE
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:216    .bss.ES_UVC_STREAM_BUF_SIZE:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:226    .bss.ES_UVC_DATA_BUF_SIZE:00000000 ES_UVC_DATA_BUF_SIZE
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:223    .bss.ES_UVC_DATA_BUF_SIZE:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:232    .bss.ES_UVC_STREAM_BUF_COUNT:00000000 ES_UVC_STREAM_BUF_COUNT
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:233    .bss.ES_UVC_STREAM_BUF_COUNT:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:238    .data.g_IsAutoFocus:00000000 g_IsAutoFocus
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:244    .bss.glGet_Info:00000000 glGet_Info
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:245    .bss.glGet_Info:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:251    .bss.gl8GetControl:00000000 gl8GetControl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:248    .bss.gl8GetControl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:258    .bss.gl8SetControl:00000000 gl8SetControl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:255    .bss.gl8SetControl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:265    .bss.gl16GetControl:00000000 gl16GetControl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:262    .bss.gl16GetControl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:272    .bss.gl32GetControl:00000000 gl32GetControl
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:269    .bss.gl32GetControl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:278    .bss.glcommitcount:00000000 glcommitcount
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:279    .bss.glcommitcount:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:284    .data.glcheckframe:00000000 glcheckframe
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:287    .text.esUVCAppErrorHandler:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:290    .text.esUVCAppErrorHandler:00000000 esUVCAppErrorHandler
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:316    .text.esUVCUvcAddHeader:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:318    .text.esUVCUvcAddHeader:00000000 esUVCUvcAddHeader
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:369    .text.esUVCUvcAddHeader:00000074 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:374    .rodata:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:381    .text.esUVCUvcApplnStart:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:384    .text.esUVCUvcApplnStart:00000000 esUVCUvcApplnStart
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:513    .text.esUVCUvcApplnStart:00000148 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:533    .text.esUVCUvcApplnStop:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:536    .text.esUVCUvcApplnStop:00000000 esUVCUvcApplnStop
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:637    .text.esUVCUvcApplnStop:000000f4 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:656    .text.esUVCGpifCB:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:659    .text.esUVCGpifCB:00000000 esUVCGpifCB
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:731    .text.esUVCGpifCB:000000ac $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:738    .text.esUVCUvcAppDmaCallback:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:741    .text.esUVCUvcAppDmaCallback:00000000 esUVCUvcAppDmaCallback
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1048   .text.esUVCUvcAppDmaCallback:00000380 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1068   .text.esUVCUvcApplnUSBEventCB:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1070   .text.esUVCUvcApplnUSBEventCB:00000000 esUVCUvcApplnUSBEventCB
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1100   .text.esUVCUvcApplnUSBEventCB:0000003c $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1110   .text.esUVCUvcApplnUSBEventCB:0000005c $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1232   .text.esUVCUvcApplnUSBEventCB:00000198 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1243   .text.esUVCApplnLPMRqtCB:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1245   .text.esUVCApplnLPMRqtCB:00000000 esUVCApplnLPMRqtCB
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1290   .text.esSetCameraResolution:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1293   .text.esSetCameraResolution:00000000 esSetCameraResolution
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1450   .text.esSetCameraResolution:000001ac $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1490   .text.esUVCUvcApplnUSBSetupCB:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:1492   .text.esUVCUvcApplnUSBSetupCB:00000000 esUVCUvcApplnUSBSetupCB
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:2244   .text.esUVCUvcApplnUSBSetupCB:00000828 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:2360   .text.esUVCUvcApplnInit:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:2363   .text.esUVCUvcApplnInit:00000000 esUVCUvcApplnInit
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3057   .text.esUVCUvcApplnInit:000007a8 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3134   .text.esUVCUvcApplnDebugInit:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3137   .text.esUVCUvcApplnDebugInit:00000000 esUVCUvcApplnDebugInit
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3244   .text.esUVCUvcApplnDebugInit:00000104 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3253   .text.esUVCUvcAppThread_Entry:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3256   .text.esUVCUvcAppThread_Entry:00000000 esUVCUvcAppThread_Entry
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3344   .text.esUVCUvcAppThread_Entry:000000c8 $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3368   .text.CyFxApplicationDefine:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3371   .text.CyFxApplicationDefine:00000000 CyFxApplicationDefine
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3511   .text.CyFxApplicationDefine:0000018c $d
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3527   .text.main:00000000 $a
-C:\Users\wcheng\AppData\Local\Temp\ccGqxnQb.s:3530   .text.main:00000000 main
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:219    .bss.ES_UVC_STREAM_BUF_SIZE:00000000 ES_UVC_STREAM_BUF_SIZE
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:216    .bss.ES_UVC_STREAM_BUF_SIZE:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:226    .bss.ES_UVC_DATA_BUF_SIZE:00000000 ES_UVC_DATA_BUF_SIZE
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:223    .bss.ES_UVC_DATA_BUF_SIZE:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:232    .bss.ES_UVC_STREAM_BUF_COUNT:00000000 ES_UVC_STREAM_BUF_COUNT
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:233    .bss.ES_UVC_STREAM_BUF_COUNT:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:238    .data.g_IsAutoFocus:00000000 g_IsAutoFocus
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:244    .bss.glGet_Info:00000000 glGet_Info
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:245    .bss.glGet_Info:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:251    .bss.gl8GetControl:00000000 gl8GetControl
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:248    .bss.gl8GetControl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:258    .bss.gl8SetControl:00000000 gl8SetControl
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:255    .bss.gl8SetControl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:265    .bss.gl16GetControl:00000000 gl16GetControl
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:262    .bss.gl16GetControl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:272    .bss.gl32GetControl:00000000 gl32GetControl
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:269    .bss.gl32GetControl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:278    .bss.glcommitcount:00000000 glcommitcount
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:279    .bss.glcommitcount:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:284    .data.glcheckframe:00000000 glcheckframe
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:287    .text.esUVCAppErrorHandler:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:290    .text.esUVCAppErrorHandler:00000000 esUVCAppErrorHandler
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:316    .text.esUVCUvcAddHeader:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:318    .text.esUVCUvcAddHeader:00000000 esUVCUvcAddHeader
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:369    .text.esUVCUvcAddHeader:00000074 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:374    .rodata:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:381    .text.esUVCUvcApplnStart:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:384    .text.esUVCUvcApplnStart:00000000 esUVCUvcApplnStart
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:513    .text.esUVCUvcApplnStart:00000148 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:533    .text.esUVCUvcApplnStop:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:536    .text.esUVCUvcApplnStop:00000000 esUVCUvcApplnStop
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:637    .text.esUVCUvcApplnStop:000000f4 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:656    .text.esUVCGpifCB:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:659    .text.esUVCGpifCB:00000000 esUVCGpifCB
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:731    .text.esUVCGpifCB:000000ac $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:738    .text.esUVCUvcAppDmaCallback:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:741    .text.esUVCUvcAppDmaCallback:00000000 esUVCUvcAppDmaCallback
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1048   .text.esUVCUvcAppDmaCallback:00000380 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1068   .text.esUVCUvcApplnUSBEventCB:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1070   .text.esUVCUvcApplnUSBEventCB:00000000 esUVCUvcApplnUSBEventCB
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1100   .text.esUVCUvcApplnUSBEventCB:0000003c $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1110   .text.esUVCUvcApplnUSBEventCB:0000005c $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1232   .text.esUVCUvcApplnUSBEventCB:00000198 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1243   .text.esUVCApplnLPMRqtCB:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1245   .text.esUVCApplnLPMRqtCB:00000000 esUVCApplnLPMRqtCB
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1290   .text.esSetCameraResolution:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1293   .text.esSetCameraResolution:00000000 esSetCameraResolution
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1450   .text.esSetCameraResolution:000001ac $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1490   .text.esUVCUvcApplnUSBSetupCB:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:1492   .text.esUVCUvcApplnUSBSetupCB:00000000 esUVCUvcApplnUSBSetupCB
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:2244   .text.esUVCUvcApplnUSBSetupCB:00000828 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:2360   .text.esUVCUvcApplnInit:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:2363   .text.esUVCUvcApplnInit:00000000 esUVCUvcApplnInit
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3057   .text.esUVCUvcApplnInit:000007a8 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3134   .text.esUVCUvcApplnDebugInit:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3137   .text.esUVCUvcApplnDebugInit:00000000 esUVCUvcApplnDebugInit
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3244   .text.esUVCUvcApplnDebugInit:00000104 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3253   .text.esUVCUvcAppThread_Entry:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3256   .text.esUVCUvcAppThread_Entry:00000000 esUVCUvcAppThread_Entry
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3344   .text.esUVCUvcAppThread_Entry:000000c8 $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3368   .text.CyFxApplicationDefine:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3371   .text.CyFxApplicationDefine:00000000 CyFxApplicationDefine
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3511   .text.CyFxApplicationDefine:0000018c $d
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3527   .text.main:00000000 $a
+C:\Users\wcheng\AppData\Local\Temp\ccZPWtPd.s:3530   .text.main:00000000 main
                      .debug_frame:00000010 $d
                            .group:00000000 wm4.1.29463082a45126943f020ea30bda05c8
                            .group:00000000 wm4.newlib.h.8.384a112feabb3bef7b573ae48cde2e3b

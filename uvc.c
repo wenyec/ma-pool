@@ -156,7 +156,7 @@ volatile static SensorCtrl PUCSaturation =
 		 2,					//UVCLn: the command length
 		 0,					//UVCMinLo: the command minimum value low byte
 		 0,					//UVCMinHi: the command minimum value high byte
-		 100,				//UVCMaxLo: the command maximum value low byte
+		 255,				//UVCMaxLo: the command maximum value low byte
 		 0,					//UVCMaxHi: the command maximum value high byte
 		 1,					//UVCResLo: the command Res. value low byte
 		 0,					//UVCResHi: the command Res. value high byte

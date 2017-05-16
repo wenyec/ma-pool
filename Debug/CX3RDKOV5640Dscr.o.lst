@@ -116,8 +116,8 @@
  124              	esUVCUSBSSConfigDscr:
  125 0000 09       		.byte	9
  126 0001 02       		.byte	2
- 127 0002 3E       		.byte	62
- 128 0003 01       		.byte	1
+ 127 0002 E4       		.byte	-28
+ 128 0003 00       		.byte	0
  129 0004 02       		.byte	2
  130 0005 01       		.byte	1
  131 0006 03       		.byte	3
@@ -168,9 +168,9 @@
  176 0033 00       		.byte	0
  177 0034 00       		.byte	0
  178 0035 03       		.byte	3
- 179 0036 2A       		.byte	42
+ 179 0036 00       		.byte	0
  180 0037 00       		.byte	0
- 181 0038 02       		.byte	2
+ 181 0038 00       		.byte	0
  182 0039 0D       		.byte	13
  183 003a 24       		.byte	36
  184 003b 05       		.byte	5
@@ -179,7 +179,7 @@
  187 003e 00       		.byte	0
  188 003f 40       		.byte	64
  189 0040 03       		.byte	3
- 190 0041 D3       		.byte	-45
+ 190 0041 FF       		.byte	-1
  191 0042 00       		.byte	0
  192 0043 00       		.byte	0
  193 0044 00       		.byte	0
@@ -252,7 +252,7 @@
  260 0087 24       		.byte	36
  261 0088 01       		.byte	1
  262 0089 01       		.byte	1
- 263 008a AB       		.byte	-85
+ 263 008a 51       		.byte	81
  264 008b 00       		.byte	0
  265 008c 83       		.byte	-125
  266 008d 00       		.byte	0
@@ -266,7 +266,7 @@
  274 0095 24       		.byte	36
  275 0096 04       		.byte	4
  276 0097 01       		.byte	1
- 277 0098 04       		.byte	4
+ 277 0098 01       		.byte	1
  278 0099 59       		.byte	89
  279 009a 55       		.byte	85
  280 009b 59       		.byte	89
@@ -284,7 +284,7 @@
  292 00a7 9B       		.byte	-101
  293 00a8 71       		.byte	113
  294 00a9 10       		.byte	16
- 295 00aa 03       		.byte	3
+ 295 00aa 01       		.byte	1
  296 00ab 00       		.byte	0
  297 00ac 00       		.byte	0
  298 00ad 00       		.byte	0
@@ -294,880 +294,790 @@
  302 00b1 05       		.byte	5
  303 00b2 01       		.byte	1
  304 00b3 02       		.byte	2
- 305 00b4 80       		.byte	-128
- 306 00b5 07       		.byte	7
- 307 00b6 38       		.byte	56
- 308 00b7 04       		.byte	4
+ 305 00b4 00       		.byte	0
+ 306 00b5 05       		.byte	5
+ 307 00b6 D0       		.byte	-48
+ 308 00b7 02       		.byte	2
  309 00b8 00       		.byte	0
- 310 00b9 80       		.byte	-128
- 311 00ba 53       		.byte	83
- 312 00bb 3B       		.byte	59
+ 310 00b9 00       		.byte	0
+ 311 00ba 57       		.byte	87
+ 312 00bb 30       		.byte	48
  313 00bc 00       		.byte	0
- 314 00bd 80       		.byte	-128
- 315 00be 53       		.byte	83
- 316 00bf 3B       		.byte	59
+ 314 00bd 00       		.byte	0
+ 315 00be BC       		.byte	-68
+ 316 00bf 34       		.byte	52
  317 00c0 00       		.byte	0
- 318 00c1 48       		.byte	72
- 319 00c2 3F       		.byte	63
+ 318 00c1 20       		.byte	32
+ 319 00c2 1C       		.byte	28
  320 00c3 00       		.byte	0
- 321 00c4 15       		.byte	21
- 322 00c5 16       		.byte	22
- 323 00c6 05       		.byte	5
+ 321 00c4 0A       		.byte	10
+ 322 00c5 8B       		.byte	-117
+ 323 00c6 02       		.byte	2
  324 00c7 00       		.byte	0
  325 00c8 01       		.byte	1
- 326 00c9 15       		.byte	21
- 327 00ca 16       		.byte	22
- 328 00cb 05       		.byte	5
+ 326 00c9 0A       		.byte	10
+ 327 00ca 8B       		.byte	-117
+ 328 00cb 02       		.byte	2
  329 00cc 00       		.byte	0
- 330 00cd 1E       		.byte	30
+ 330 00cd 0A       		.byte	10
  331 00ce 24       		.byte	36
- 332 00cf 05       		.byte	5
- 333 00d0 02       		.byte	2
- 334 00d1 02       		.byte	2
- 335 00d2 80       		.byte	-128
- 336 00d3 02       		.byte	2
- 337 00d4 E0       		.byte	-32
- 338 00d5 01       		.byte	1
+ 332 00cf 03       		.byte	3
+ 333 00d0 00       		.byte	0
+ 334 00d1 01       		.byte	1
+ 335 00d2 20       		.byte	32
+ 336 00d3 0A       		.byte	10
+ 337 00d4 98       		.byte	-104
+ 338 00d5 07       		.byte	7
  339 00d6 00       		.byte	0
- 340 00d7 00       		.byte	0
- 341 00d8 94       		.byte	-108
- 342 00d9 11       		.byte	17
- 343 00da 00       		.byte	0
+ 340 00d7 07       		.byte	7
+ 341 00d8 05       		.byte	5
+ 342 00d9 83       		.byte	-125
+ 343 00da 02       		.byte	2
  344 00db 00       		.byte	0
- 345 00dc 94       		.byte	-108
- 346 00dd 11       		.byte	17
- 347 00de 00       		.byte	0
- 348 00df 60       		.byte	96
- 349 00e0 09       		.byte	9
+ 345 00dc 04       		.byte	4
+ 346 00dd 00       		.byte	0
+ 347 00de 06       		.byte	6
+ 348 00df 30       		.byte	48
+ 349 00e0 0F       		.byte	15
  350 00e1 00       		.byte	0
- 351 00e2 0A       		.byte	10
- 352 00e3 8B       		.byte	-117
- 353 00e4 02       		.byte	2
- 354 00e5 00       		.byte	0
- 355 00e6 01       		.byte	1
- 356 00e7 0A       		.byte	10
- 357 00e8 8B       		.byte	-117
- 358 00e9 02       		.byte	2
- 359 00ea 00       		.byte	0
- 360 00eb 1E       		.byte	30
- 361 00ec 24       		.byte	36
- 362 00ed 05       		.byte	5
- 363 00ee 03       		.byte	3
- 364 00ef 02       		.byte	2
- 365 00f0 00       		.byte	0
- 366 00f1 05       		.byte	5
- 367 00f2 D0       		.byte	-48
- 368 00f3 02       		.byte	2
- 369 00f4 00       		.byte	0
- 370 00f5 00       		.byte	0
- 371 00f6 57       		.byte	87
- 372 00f7 30       		.byte	48
- 373 00f8 00       		.byte	0
- 374 00f9 00       		.byte	0
- 375 00fa BC       		.byte	-68
- 376 00fb 34       		.byte	52
- 377 00fc 00       		.byte	0
- 378 00fd 20       		.byte	32
- 379 00fe 1C       		.byte	28
- 380 00ff 00       		.byte	0
- 381 0100 0A       		.byte	10
- 382 0101 8B       		.byte	-117
- 383 0102 02       		.byte	2
- 384 0103 00       		.byte	0
- 385 0104 01       		.byte	1
- 386 0105 0A       		.byte	10
- 387 0106 8B       		.byte	-117
- 388 0107 02       		.byte	2
- 389 0108 00       		.byte	0
- 390 0109 1E       		.byte	30
- 391 010a 24       		.byte	36
- 392 010b 05       		.byte	5
- 393 010c 04       		.byte	4
- 394 010d 02       		.byte	2
- 395 010e 20       		.byte	32
- 396 010f 0A       		.byte	10
- 397 0110 98       		.byte	-104
- 398 0111 07       		.byte	7
- 399 0112 00       		.byte	0
- 400 0113 D0       		.byte	-48
- 401 0114 14       		.byte	20
- 402 0115 48       		.byte	72
- 403 0116 00       		.byte	0
- 404 0117 D0       		.byte	-48
- 405 0118 14       		.byte	20
- 406 0119 48       		.byte	72
- 407 011a 00       		.byte	0
- 408 011b C6       		.byte	-58
- 409 011c 99       		.byte	-103
- 410 011d 00       		.byte	0
- 411 011e 2A       		.byte	42
- 412 011f 2C       		.byte	44
- 413 0120 0A       		.byte	10
- 414 0121 00       		.byte	0
- 415 0122 01       		.byte	1
- 416 0123 2A       		.byte	42
- 417 0124 2C       		.byte	44
- 418 0125 0A       		.byte	10
- 419 0126 00       		.byte	0
- 420 0127 0A       		.byte	10
- 421 0128 24       		.byte	36
- 422 0129 03       		.byte	3
- 423 012a 00       		.byte	0
- 424 012b 01       		.byte	1
- 425 012c 20       		.byte	32
- 426 012d 0A       		.byte	10
- 427 012e 98       		.byte	-104
- 428 012f 07       		.byte	7
- 429 0130 00       		.byte	0
- 430 0131 07       		.byte	7
- 431 0132 05       		.byte	5
- 432 0133 83       		.byte	-125
- 433 0134 02       		.byte	2
- 434 0135 00       		.byte	0
- 435 0136 04       		.byte	4
- 436 0137 00       		.byte	0
- 437 0138 06       		.byte	6
- 438 0139 30       		.byte	48
- 439 013a 0F       		.byte	15
- 440 013b 00       		.byte	0
- 441 013c 00       		.byte	0
- 442 013d 00       		.byte	0
- 443              		.global	esUVCUSBHSConfigDscr
- 444 013e 0000     		.section	.rodata.esUVCUSBHSConfigDscr,"a",%progbits
- 445              		.align	2
- 448              	esUVCUSBHSConfigDscr:
- 449 0000 09       		.byte	9
- 450 0001 02       		.byte	2
- 451 0002 CD       		.byte	-51
- 452 0003 00       		.byte	0
- 453 0004 02       		.byte	2
- 454 0005 01       		.byte	1
- 455 0006 04       		.byte	4
- 456 0007 C0       		.byte	-64
- 457 0008 32       		.byte	50
- 458 0009 08       		.byte	8
- 459 000a 0B       		.byte	11
- 460 000b 00       		.byte	0
- 461 000c 02       		.byte	2
- 462 000d 0E       		.byte	14
- 463 000e 03       		.byte	3
- 464 000f 00       		.byte	0
- 465 0010 00       		.byte	0
- 466 0011 09       		.byte	9
- 467 0012 04       		.byte	4
- 468 0013 00       		.byte	0
- 469 0014 00       		.byte	0
- 470 0015 01       		.byte	1
- 471 0016 0E       		.byte	14
- 472 0017 01       		.byte	1
- 473 0018 00       		.byte	0
- 474 0019 00       		.byte	0
- 475 001a 0D       		.byte	13
- 476 001b 24       		.byte	36
- 477 001c 01       		.byte	1
- 478 001d 00       		.byte	0
- 479 001e 01       		.byte	1
- 480 001f 50       		.byte	80
- 481 0020 00       		.byte	0
- 482 0021 00       		.byte	0
- 483 0022 6C       		.byte	108
- 484 0023 DC       		.byte	-36
- 485 0024 02       		.byte	2
- 486 0025 01       		.byte	1
- 487 0026 01       		.byte	1
- 488 0027 12       		.byte	18
- 489 0028 24       		.byte	36
- 490 0029 02       		.byte	2
- 491 002a 01       		.byte	1
- 492 002b 01       		.byte	1
- 493 002c 02       		.byte	2
- 494 002d 00       		.byte	0
- 495 002e 00       		.byte	0
- 496 002f 00       		.byte	0
- 497 0030 00       		.byte	0
- 498 0031 00       		.byte	0
- 499 0032 00       		.byte	0
- 500 0033 00       		.byte	0
- 501 0034 00       		.byte	0
- 502 0035 03       		.byte	3
- 503 0036 2A       		.byte	42
- 504 0037 00       		.byte	0
- 505 0038 02       		.byte	2
- 506 0039 0C       		.byte	12
- 507 003a 24       		.byte	36
- 508 003b 05       		.byte	5
- 509 003c 02       		.byte	2
- 510 003d 01       		.byte	1
- 511 003e 00       		.byte	0
- 512 003f 40       		.byte	64
- 513 0040 03       		.byte	3
- 514 0041 5F       		.byte	95
- 515 0042 10       		.byte	16
- 516 0043 00       		.byte	0
- 517 0044 00       		.byte	0
- 518 0045 1C       		.byte	28
- 519 0046 24       		.byte	36
- 520 0047 06       		.byte	6
- 521 0048 03       		.byte	3
- 522 0049 FF       		.byte	-1
- 523 004a FF       		.byte	-1
- 524 004b FF       		.byte	-1
- 525 004c FF       		.byte	-1
- 526 004d FF       		.byte	-1
- 527 004e FF       		.byte	-1
- 528 004f FF       		.byte	-1
- 529 0050 FF       		.byte	-1
- 530 0051 FF       		.byte	-1
- 531 0052 FF       		.byte	-1
- 532 0053 FF       		.byte	-1
- 533 0054 FF       		.byte	-1
- 534 0055 FF       		.byte	-1
- 535 0056 FF       		.byte	-1
- 536 0057 FF       		.byte	-1
- 537 0058 FF       		.byte	-1
- 538 0059 00       		.byte	0
- 539 005a 01       		.byte	1
- 540 005b 02       		.byte	2
- 541 005c 03       		.byte	3
- 542 005d 00       		.byte	0
- 543 005e 00       		.byte	0
- 544 005f 00       		.byte	0
- 545 0060 00       		.byte	0
- 546 0061 09       		.byte	9
- 547 0062 24       		.byte	36
- 548 0063 03       		.byte	3
- 549 0064 04       		.byte	4
- 550 0065 01       		.byte	1
- 551 0066 01       		.byte	1
- 552 0067 00       		.byte	0
- 553 0068 03       		.byte	3
- 554 0069 00       		.byte	0
- 555 006a 07       		.byte	7
- 556 006b 05       		.byte	5
- 557 006c 82       		.byte	-126
- 558 006d 03       		.byte	3
- 559 006e 40       		.byte	64
- 560 006f 00       		.byte	0
- 561 0070 01       		.byte	1
- 562 0071 05       		.byte	5
- 563 0072 25       		.byte	37
- 564 0073 03       		.byte	3
- 565 0074 40       		.byte	64
- 566 0075 00       		.byte	0
- 567 0076 09       		.byte	9
- 568 0077 04       		.byte	4
- 569 0078 01       		.byte	1
- 570 0079 00       		.byte	0
- 571 007a 01       		.byte	1
- 572 007b 0E       		.byte	14
- 573 007c 02       		.byte	2
- 574 007d 00       		.byte	0
- 575 007e 00       		.byte	0
- 576 007f 0E       		.byte	14
- 577 0080 24       		.byte	36
- 578 0081 01       		.byte	1
- 579 0082 01       		.byte	1
- 580 0083 47       		.byte	71
- 581 0084 00       		.byte	0
- 582 0085 83       		.byte	-125
- 583 0086 00       		.byte	0
- 584 0087 04       		.byte	4
- 585 0088 00       		.byte	0
- 586 0089 00       		.byte	0
- 587 008a 00       		.byte	0
- 588 008b 01       		.byte	1
- 589 008c 00       		.byte	0
- 590 008d 1B       		.byte	27
- 591 008e 24       		.byte	36
- 592 008f 04       		.byte	4
- 593 0090 01       		.byte	1
- 594 0091 01       		.byte	1
- 595 0092 59       		.byte	89
- 596 0093 55       		.byte	85
- 597 0094 59       		.byte	89
- 598 0095 32       		.byte	50
- 599 0096 00       		.byte	0
- 600 0097 00       		.byte	0
- 601 0098 10       		.byte	16
- 602 0099 00       		.byte	0
- 603 009a 80       		.byte	-128
- 604 009b 00       		.byte	0
- 605 009c 00       		.byte	0
- 606 009d AA       		.byte	-86
- 607 009e 00       		.byte	0
- 608 009f 38       		.byte	56
- 609 00a0 9B       		.byte	-101
- 610 00a1 71       		.byte	113
- 611 00a2 10       		.byte	16
- 612 00a3 01       		.byte	1
- 613 00a4 00       		.byte	0
- 614 00a5 00       		.byte	0
- 615 00a6 00       		.byte	0
- 616 00a7 00       		.byte	0
- 617 00a8 1E       		.byte	30
- 618 00a9 24       		.byte	36
- 619 00aa 05       		.byte	5
- 620 00ab 01       		.byte	1
- 621 00ac 00       		.byte	0
- 622 00ad 80       		.byte	-128
- 623 00ae 02       		.byte	2
- 624 00af E0       		.byte	-32
- 625 00b0 01       		.byte	1
- 626 00b1 00       		.byte	0
- 627 00b2 00       		.byte	0
- 628 00b3 94       		.byte	-108
- 629 00b4 11       		.byte	17
- 630 00b5 00       		.byte	0
- 631 00b6 00       		.byte	0
- 632 00b7 94       		.byte	-108
- 633 00b8 11       		.byte	17
- 634 00b9 00       		.byte	0
- 635 00ba 60       		.byte	96
- 636 00bb 09       		.byte	9
- 637 00bc 00       		.byte	0
- 638 00bd 15       		.byte	21
- 639 00be 16       		.byte	22
- 640 00bf 05       		.byte	5
- 641 00c0 00       		.byte	0
- 642 00c1 01       		.byte	1
- 643 00c2 15       		.byte	21
- 644 00c3 16       		.byte	22
- 645 00c4 05       		.byte	5
- 646 00c5 00       		.byte	0
- 647 00c6 07       		.byte	7
- 648 00c7 05       		.byte	5
- 649 00c8 83       		.byte	-125
- 650 00c9 02       		.byte	2
- 651 00ca 00       		.byte	0
- 652 00cb 02       		.byte	2
- 653 00cc 00       		.byte	0
- 654              		.global	esUVCUSBFSConfigDscr
- 655 00cd 000000   		.section	.rodata.esUVCUSBFSConfigDscr,"a",%progbits
- 656              		.align	2
- 659              	esUVCUSBFSConfigDscr:
- 660 0000 09       		.byte	9
- 661 0001 02       		.byte	2
- 662 0002 09       		.byte	9
- 663 0003 00       		.byte	0
- 664 0004 00       		.byte	0
- 665 0005 01       		.byte	1
- 666 0006 00       		.byte	0
- 667 0007 80       		.byte	-128
- 668 0008 32       		.byte	50
- 669              		.global	esUVCUSBStringLangIDDscr
- 670 0009 000000   		.section	.rodata.esUVCUSBStringLangIDDscr,"a",%progbits
- 671              		.align	2
- 674              	esUVCUSBStringLangIDDscr:
- 675 0000 04       		.byte	4
- 676 0001 03       		.byte	3
- 677 0002 09       		.byte	9
- 678 0003 04       		.byte	4
- 679              		.global	esUVCUSBManufactureDscr
- 680              		.section	.rodata.esUVCUSBManufactureDscr,"a",%progbits
- 681              		.align	2
- 684              	esUVCUSBManufactureDscr:
- 685 0000 1A       		.byte	26
- 686 0001 03       		.byte	3
- 687 0002 56       		.byte	86
- 688 0003 00       		.byte	0
- 689 0004 69       		.byte	105
- 690 0005 00       		.byte	0
- 691 0006 64       		.byte	100
- 692 0007 00       		.byte	0
- 693 0008 65       		.byte	101
- 694 0009 00       		.byte	0
- 695 000a 6F       		.byte	111
- 696 000b 00       		.byte	0
- 697 000c 6C       		.byte	108
- 698 000d 00       		.byte	0
- 699 000e 6F       		.byte	111
- 700 000f 00       		.byte	0
- 701 0010 67       		.byte	103
- 702 0011 00       		.byte	0
- 703 0012 79       		.byte	121
- 704 0013 00       		.byte	0
- 705 0014 49       		.byte	73
- 706 0015 00       		.byte	0
- 707 0016 6E       		.byte	110
- 708 0017 00       		.byte	0
- 709 0018 63       		.byte	99
- 710 0019 00       		.byte	0
- 711              		.global	esUVCUSBProductDscr
- 712 001a 0000     		.section	.rodata.esUVCUSBProductDscr,"a",%progbits
- 713              		.align	2
- 716              	esUVCUSBProductDscr:
- 717 0000 38       		.byte	56
- 718 0001 03       		.byte	3
- 719 0002 56       		.byte	86
- 720 0003 00       		.byte	0
- 721 0004 49       		.byte	73
- 722 0005 00       		.byte	0
- 723 0006 53       		.byte	83
- 724 0007 00       		.byte	0
- 725 0008 2D       		.byte	45
- 726 0009 00       		.byte	0
- 727 000a 43       		.byte	67
- 728 000b 00       		.byte	0
- 729 000c 58       		.byte	88
- 730 000d 00       		.byte	0
- 731 000e 33       		.byte	51
- 732 000f 00       		.byte	0
- 733 0010 20       		.byte	32
- 734 0011 00       		.byte	0
- 735 0012 4D       		.byte	77
- 736 0013 00       		.byte	0
- 737 0014 49       		.byte	73
- 738 0015 00       		.byte	0
- 739 0016 50       		.byte	80
- 740 0017 00       		.byte	0
- 741 0018 49       		.byte	73
- 742 0019 00       		.byte	0
- 743 001a 37       		.byte	55
- 744 001b 00       		.byte	0
- 745 001c 32       		.byte	50
- 746 001d 00       		.byte	0
- 747 001e 30       		.byte	48
- 748 001f 00       		.byte	0
- 749 0020 20       		.byte	32
- 750 0021 00       		.byte	0
- 751 0022 77       		.byte	119
- 752 0023 00       		.byte	0
- 753 0024 69       		.byte	105
- 754 0025 00       		.byte	0
- 755 0026 74       		.byte	116
- 756 0027 00       		.byte	0
- 757 0028 68       		.byte	104
- 758 0029 00       		.byte	0
- 759 002a 20       		.byte	32
- 760 002b 00       		.byte	0
- 761 002c 4F       		.byte	79
- 762 002d 00       		.byte	0
- 763 002e 56       		.byte	86
- 764 002f 00       		.byte	0
- 765 0030 35       		.byte	53
- 766 0031 00       		.byte	0
- 767 0032 36       		.byte	54
- 768 0033 00       		.byte	0
- 769 0034 34       		.byte	52
- 770 0035 00       		.byte	0
- 771 0036 30       		.byte	48
- 772 0037 00       		.byte	0
- 773              		.global	esUVCUSBConfigSSDscr
- 774              		.section	.rodata.esUVCUSBConfigSSDscr,"a",%progbits
- 775              		.align	2
- 778              	esUVCUSBConfigSSDscr:
- 779 0000 10       		.byte	16
- 780 0001 03       		.byte	3
- 781 0002 55       		.byte	85
- 782 0003 00       		.byte	0
- 783 0004 53       		.byte	83
- 784 0005 00       		.byte	0
- 785 0006 42       		.byte	66
- 786 0007 00       		.byte	0
- 787 0008 2D       		.byte	45
- 788 0009 00       		.byte	0
- 789 000a 33       		.byte	51
- 790 000b 00       		.byte	0
- 791 000c 2E       		.byte	46
- 792 000d 00       		.byte	0
- 793 000e 30       		.byte	48
- 794 000f 00       		.byte	0
- 795              		.global	esUVCUSBConfigHSDscr
- 796              		.section	.rodata.esUVCUSBConfigHSDscr,"a",%progbits
- 797              		.align	2
- 800              	esUVCUSBConfigHSDscr:
- 801 0000 10       		.byte	16
- 802 0001 03       		.byte	3
- 803 0002 55       		.byte	85
- 804 0003 00       		.byte	0
- 805 0004 53       		.byte	83
- 806 0005 00       		.byte	0
- 807 0006 42       		.byte	66
- 808 0007 00       		.byte	0
- 809 0008 2D       		.byte	45
- 810 0009 00       		.byte	0
- 811 000a 32       		.byte	50
- 812 000b 00       		.byte	0
- 813 000c 2E       		.byte	46
- 814 000d 00       		.byte	0
- 815 000e 31       		.byte	49
- 816 000f 00       		.byte	0
- 817              		.global	esUVCUSBConfigFSDscr
- 818              		.section	.rodata.esUVCUSBConfigFSDscr,"a",%progbits
- 819              		.align	2
- 822              	esUVCUSBConfigFSDscr:
- 823 0000 10       		.byte	16
- 824 0001 03       		.byte	3
- 825 0002 55       		.byte	85
- 826 0003 00       		.byte	0
- 827 0004 53       		.byte	83
- 828 0005 00       		.byte	0
- 829 0006 42       		.byte	66
- 830 0007 00       		.byte	0
- 831 0008 2D       		.byte	45
- 832 0009 00       		.byte	0
- 833 000a 31       		.byte	49
- 834 000b 00       		.byte	0
- 835 000c 2E       		.byte	46
- 836 000d 00       		.byte	0
- 837 000e 31       		.byte	49
- 838 000f 00       		.byte	0
- 839              		.global	glProbeCtrl
- 840              		.section	.data.glProbeCtrl,"aw",%progbits
- 841              		.align	2
- 844              	glProbeCtrl:
- 845 0000 00       		.byte	0
- 846 0001 00       		.byte	0
- 847 0002 01       		.byte	1
- 848 0003 01       		.byte	1
- 849 0004 0A       		.byte	10
- 850 0005 8B       		.byte	-117
- 851 0006 02       		.byte	2
- 852 0007 00       		.byte	0
- 853 0008 00       		.byte	0
- 854 0009 00       		.byte	0
- 855 000a 00       		.byte	0
- 856 000b 00       		.byte	0
- 857 000c 00       		.byte	0
- 858 000d 00       		.byte	0
- 859 000e 00       		.byte	0
- 860 000f 00       		.byte	0
- 861 0010 00       		.byte	0
- 862 0011 00       		.byte	0
- 863 0012 00       		.byte	0
- 864 0013 48       		.byte	72
- 865 0014 3F       		.byte	63
- 866 0015 00       		.byte	0
- 867 0016 00       		.byte	0
- 868 0017 90       		.byte	-112
- 869 0018 00       		.byte	0
- 870 0019 00       		.byte	0
- 871              		.global	gl1080pProbeCtrl
- 872 001a 0000     		.section	.rodata.gl1080pProbeCtrl,"a",%progbits
- 873              		.align	2
- 876              	gl1080pProbeCtrl:
- 877 0000 00       		.byte	0
- 878 0001 00       		.byte	0
- 879 0002 01       		.byte	1
- 880 0003 01       		.byte	1
- 881 0004 15       		.byte	21
- 882 0005 16       		.byte	22
- 883 0006 05       		.byte	5
- 884 0007 00       		.byte	0
- 885 0008 00       		.byte	0
- 886 0009 00       		.byte	0
- 887 000a 00       		.byte	0
- 888 000b 00       		.byte	0
- 889 000c 00       		.byte	0
- 890 000d 00       		.byte	0
- 891 000e 00       		.byte	0
- 892 000f 00       		.byte	0
- 893 0010 00       		.byte	0
- 894 0011 00       		.byte	0
- 895 0012 00       		.byte	0
- 896 0013 48       		.byte	72
- 897 0014 3F       		.byte	63
- 898 0015 00       		.byte	0
- 899 0016 00       		.byte	0
- 900 0017 90       		.byte	-112
- 901 0018 00       		.byte	0
- 902 0019 00       		.byte	0
- 903              		.global	glVga60ProbeCtrl
- 904 001a 0000     		.section	.rodata.glVga60ProbeCtrl,"a",%progbits
- 905              		.align	2
- 908              	glVga60ProbeCtrl:
- 909 0000 00       		.byte	0
- 910 0001 00       		.byte	0
- 911 0002 01       		.byte	1
- 912 0003 02       		.byte	2
- 913 0004 0A       		.byte	10
- 914 0005 8B       		.byte	-117
- 915 0006 02       		.byte	2
- 916 0007 00       		.byte	0
- 917 0008 00       		.byte	0
- 918 0009 00       		.byte	0
- 919 000a 00       		.byte	0
- 920 000b 00       		.byte	0
- 921 000c 00       		.byte	0
- 922 000d 00       		.byte	0
- 923 000e 00       		.byte	0
- 924 000f 00       		.byte	0
- 925 0010 00       		.byte	0
- 926 0011 00       		.byte	0
- 927 0012 00       		.byte	0
- 928 0013 60       		.byte	96
- 929 0014 09       		.byte	9
- 930 0015 00       		.byte	0
- 931 0016 00       		.byte	0
- 932 0017 90       		.byte	-112
- 933 0018 00       		.byte	0
- 934 0019 00       		.byte	0
- 935              		.global	gl720pProbeCtrl
- 936 001a 0000     		.section	.rodata.gl720pProbeCtrl,"a",%progbits
- 937              		.align	2
- 940              	gl720pProbeCtrl:
- 941 0000 00       		.byte	0
- 942 0001 00       		.byte	0
- 943 0002 01       		.byte	1
- 944 0003 03       		.byte	3
- 945 0004 0A       		.byte	10
- 946 0005 8B       		.byte	-117
- 947 0006 02       		.byte	2
- 948 0007 00       		.byte	0
- 949 0008 00       		.byte	0
- 950 0009 00       		.byte	0
- 951 000a 00       		.byte	0
- 952 000b 00       		.byte	0
- 953 000c 00       		.byte	0
- 954 000d 00       		.byte	0
- 955 000e 00       		.byte	0
- 956 000f 00       		.byte	0
- 957 0010 00       		.byte	0
- 958 0011 00       		.byte	0
- 959 0012 00       		.byte	0
- 960 0013 20       		.byte	32
- 961 0014 1C       		.byte	28
- 962 0015 00       		.byte	0
- 963 0016 00       		.byte	0
- 964 0017 90       		.byte	-112
- 965 0018 00       		.byte	0
- 966 0019 00       		.byte	0
- 967              		.global	gl5MpProbeCtrl
- 968 001a 0000     		.section	.rodata.gl5MpProbeCtrl,"a",%progbits
- 969              		.align	2
- 972              	gl5MpProbeCtrl:
- 973 0000 00       		.byte	0
- 974 0001 00       		.byte	0
- 975 0002 01       		.byte	1
- 976 0003 04       		.byte	4
- 977 0004 2A       		.byte	42
- 978 0005 2C       		.byte	44
- 979 0006 0A       		.byte	10
- 980 0007 00       		.byte	0
- 981 0008 00       		.byte	0
- 982 0009 00       		.byte	0
- 983 000a 00       		.byte	0
- 984 000b 00       		.byte	0
- 985 000c 00       		.byte	0
- 986 000d 00       		.byte	0
- 987 000e 00       		.byte	0
- 988 000f 00       		.byte	0
- 989 0010 00       		.byte	0
- 990 0011 00       		.byte	0
- 991 0012 00       		.byte	0
- 992 0013 C6       		.byte	-58
- 993 0014 99       		.byte	-103
- 994 0015 00       		.byte	0
- 995 0016 00       		.byte	0
- 996 0017 90       		.byte	-112
- 997 0018 00       		.byte	0
- 998 0019 00       		.byte	0
- 999              		.global	glVga30ProbeCtrl
- 1000 001a 0000     		.section	.rodata.glVga30ProbeCtrl,"a",%progbits
- 1001              		.align	2
- 1004              	glVga30ProbeCtrl:
- 1005 0000 00       		.byte	0
- 1006 0001 00       		.byte	0
- 1007 0002 01       		.byte	1
- 1008 0003 01       		.byte	1
- 1009 0004 0A       		.byte	10
- 1010 0005 8B       		.byte	-117
- 1011 0006 02       		.byte	2
- 1012 0007 00       		.byte	0
- 1013 0008 00       		.byte	0
- 1014 0009 00       		.byte	0
- 1015 000a 00       		.byte	0
- 1016 000b 00       		.byte	0
- 1017 000c 00       		.byte	0
- 1018 000d 00       		.byte	0
- 1019 000e 00       		.byte	0
- 1020 000f 00       		.byte	0
- 1021 0010 00       		.byte	0
- 1022 0011 00       		.byte	0
- 1023 0012 00       		.byte	0
- 1024 0013 60       		.byte	96
- 1025 0014 09       		.byte	9
- 1026 0015 00       		.byte	0
- 1027 0016 00       		.byte	0
- 1028 0017 30       		.byte	48
- 1029 0018 00       		.byte	0
- 1030 0019 00       		.byte	0
- 1031              		.global	glStillProbeCtrl
- 1032 001a 0000     		.section	.data.glStillProbeCtrl,"aw",%progbits
- 1033              		.align	2
- 1036              	glStillProbeCtrl:
- 1037 0000 01       		.byte	1
- 1038 0001 01       		.byte	1
- 1039 0002 00       		.byte	0
- 1040 0003 00       		.byte	0
- 1041 0004 C6       		.byte	-58
- 1042 0005 99       		.byte	-103
- 1043 0006 00       		.byte	0
- 1044 0007 00       		.byte	0
- 1045 0008 30       		.byte	48
- 1046 0009 00       		.byte	0
- 1047 000a 00       		.byte	0
- 1048              		.global	cfgUvc5Mp15NoMclk
- 1049 000b 00       		.section	.data.cfgUvc5Mp15NoMclk,"aw",%progbits
- 1050              		.align	2
- 1053              	cfgUvc5Mp15NoMclk:
- 1054 0000 26       		.byte	38
- 1055 0001 02       		.byte	2
- 1056 0002 01       		.byte	1
- 1057 0003 00       		.space	1
- 1058 0004 4000     		.short	64
- 1059 0006 00       		.byte	0
- 1060 0007 00       		.byte	0
- 1061 0008 00       		.byte	0
- 1062 0009 00       		.space	1
- 1063 000a 0000     		.short	0
- 1064 000c 02       		.byte	2
- 1065 000d 00       		.space	1
- 1066 000e 200A     		.short	2592
- 1067 0010 0100     		.short	1
- 1068              		.global	cfgUvc1080p30NoMclk
- 1069 0012 0000     		.section	.data.cfgUvc1080p30NoMclk,"aw",%progbits
- 1070              		.align	2
- 1073              	cfgUvc1080p30NoMclk:
- 1074 0000 26       		.byte	38
- 1075 0001 02       		.byte	2
- 1076 0002 01       		.byte	1
- 1077 0003 00       		.space	1
- 1078 0004 3E00     		.short	62
- 1079 0006 00       		.byte	0
- 1080 0007 00       		.byte	0
- 1081 0008 00       		.byte	0
- 1082 0009 00       		.space	1
- 1083 000a 0000     		.short	0
- 1084 000c 00       		.byte	0
- 1085 000d 00       		.space	1
- 1086 000e 8007     		.short	1920
- 1087 0010 0100     		.short	1
- 1088              		.global	cfgUvc720p60NoMclk
- 1089 0012 0000     		.section	.data.cfgUvc720p60NoMclk,"aw",%progbits
- 1090              		.align	2
- 1093              	cfgUvc720p60NoMclk:
- 1094 0000 16       		.byte	22
- 1095 0001 01       		.byte	1
- 1096 0002 01       		.byte	1
- 1097 0003 00       		.space	1
- 1098 0004 2000     		.short	32
- 1099 0006 01       		.byte	1
- 1100 0007 01       		.byte	1
- 1101 0008 01       		.byte	1
- 1102 0009 00       		.space	1
- 1103 000a 0000     		.short	0
- 1104 000c 00       		.byte	0
- 1105 000d 00       		.space	1
- 1106 000e 0005     		.short	1280
- 1107 0010 0100     		.short	1
- 1108              		.global	cfgUvcVgaNoMclk
- 1109 0012 0000     		.section	.data.cfgUvcVgaNoMclk,"aw",%progbits
- 1110              		.align	2
- 1113              	cfgUvcVgaNoMclk:
- 1114 0000 26       		.byte	38
- 1115 0001 01       		.byte	1
- 1116 0002 01       		.byte	1
- 1117 0003 00       		.space	1
- 1118 0004 5A00     		.short	90
- 1119 0006 02       		.byte	2
- 1120 0007 02       		.byte	2
- 1121 0008 00       		.byte	0
- 1122 0009 00       		.space	1
- 1123 000a 0000     		.short	0
- 1124 000c 00       		.byte	0
- 1125 000d 00       		.space	1
- 1126 000e 8002     		.short	640
- 1127 0010 0100     		.short	1
- 1128              		.global	cfgUvcVga30NoMclk
- 1129 0012 0000     		.section	.data.cfgUvcVga30NoMclk,"aw",%progbits
- 1130              		.align	2
- 1133              	cfgUvcVga30NoMclk:
- 1134 0000 26       		.byte	38
- 1135 0001 01       		.byte	1
- 1136 0002 04       		.byte	4
- 1137 0003 00       		.space	1
- 1138 0004 6F00     		.short	111
- 1139 0006 01       		.byte	1
- 1140 0007 02       		.byte	2
- 1141 0008 00       		.byte	0
- 1142 0009 00       		.space	1
- 1143 000a 0000     		.short	0
- 1144 000c 00       		.byte	0
- 1145 000d 00       		.space	1
- 1146 000e 0005     		.short	1280
- 1147 0010 0100     		.short	1
- 1148 0012 0000     		.text
- 1149              	.Letext0:
- 1150              		.file 1 "c:\\program files (x86)\\cypress\\ez-usb fx3 sdk\\1.3\\arm gcc\\arm-none-eabi\\include\\s
- 1151              		.file 2 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 1152              		.file 3 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 1153              		.file 4 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/tx_p
- 1154              		.file 5 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/tx_a
- 1155              		.file 6 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 1156              		.file 7 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\\\firmware\\u3p_firmware\\inc/cyu3
- 1157              		.file 8 "../cmdqu.h"
- 1158              		.file 9 "../CX3RDKOV5640Dscr.c"
- 1159              		.file 10 "../CX3RDKOV5640.h"
+ 351 00e2 00       		.byte	0
+ 352 00e3 00       		.byte	0
+ 353              		.global	esUVCUSBHSConfigDscr
+ 354              		.section	.rodata.esUVCUSBHSConfigDscr,"a",%progbits
+ 355              		.align	2
+ 358              	esUVCUSBHSConfigDscr:
+ 359 0000 09       		.byte	9
+ 360 0001 02       		.byte	2
+ 361 0002 CD       		.byte	-51
+ 362 0003 00       		.byte	0
+ 363 0004 02       		.byte	2
+ 364 0005 01       		.byte	1
+ 365 0006 04       		.byte	4
+ 366 0007 C0       		.byte	-64
+ 367 0008 32       		.byte	50
+ 368 0009 08       		.byte	8
+ 369 000a 0B       		.byte	11
+ 370 000b 00       		.byte	0
+ 371 000c 02       		.byte	2
+ 372 000d 0E       		.byte	14
+ 373 000e 03       		.byte	3
+ 374 000f 00       		.byte	0
+ 375 0010 00       		.byte	0
+ 376 0011 09       		.byte	9
+ 377 0012 04       		.byte	4
+ 378 0013 00       		.byte	0
+ 379 0014 00       		.byte	0
+ 380 0015 01       		.byte	1
+ 381 0016 0E       		.byte	14
+ 382 0017 01       		.byte	1
+ 383 0018 00       		.byte	0
+ 384 0019 00       		.byte	0
+ 385 001a 0D       		.byte	13
+ 386 001b 24       		.byte	36
+ 387 001c 01       		.byte	1
+ 388 001d 00       		.byte	0
+ 389 001e 01       		.byte	1
+ 390 001f 50       		.byte	80
+ 391 0020 00       		.byte	0
+ 392 0021 00       		.byte	0
+ 393 0022 6C       		.byte	108
+ 394 0023 DC       		.byte	-36
+ 395 0024 02       		.byte	2
+ 396 0025 01       		.byte	1
+ 397 0026 01       		.byte	1
+ 398 0027 12       		.byte	18
+ 399 0028 24       		.byte	36
+ 400 0029 02       		.byte	2
+ 401 002a 01       		.byte	1
+ 402 002b 01       		.byte	1
+ 403 002c 02       		.byte	2
+ 404 002d 00       		.byte	0
+ 405 002e 00       		.byte	0
+ 406 002f 00       		.byte	0
+ 407 0030 00       		.byte	0
+ 408 0031 00       		.byte	0
+ 409 0032 00       		.byte	0
+ 410 0033 00       		.byte	0
+ 411 0034 00       		.byte	0
+ 412 0035 03       		.byte	3
+ 413 0036 2A       		.byte	42
+ 414 0037 00       		.byte	0
+ 415 0038 02       		.byte	2
+ 416 0039 0C       		.byte	12
+ 417 003a 24       		.byte	36
+ 418 003b 05       		.byte	5
+ 419 003c 02       		.byte	2
+ 420 003d 01       		.byte	1
+ 421 003e 00       		.byte	0
+ 422 003f 40       		.byte	64
+ 423 0040 03       		.byte	3
+ 424 0041 5F       		.byte	95
+ 425 0042 10       		.byte	16
+ 426 0043 00       		.byte	0
+ 427 0044 00       		.byte	0
+ 428 0045 1C       		.byte	28
+ 429 0046 24       		.byte	36
+ 430 0047 06       		.byte	6
+ 431 0048 03       		.byte	3
+ 432 0049 FF       		.byte	-1
+ 433 004a FF       		.byte	-1
+ 434 004b FF       		.byte	-1
+ 435 004c FF       		.byte	-1
+ 436 004d FF       		.byte	-1
+ 437 004e FF       		.byte	-1
+ 438 004f FF       		.byte	-1
+ 439 0050 FF       		.byte	-1
+ 440 0051 FF       		.byte	-1
+ 441 0052 FF       		.byte	-1
+ 442 0053 FF       		.byte	-1
+ 443 0054 FF       		.byte	-1
+ 444 0055 FF       		.byte	-1
+ 445 0056 FF       		.byte	-1
+ 446 0057 FF       		.byte	-1
+ 447 0058 FF       		.byte	-1
+ 448 0059 00       		.byte	0
+ 449 005a 01       		.byte	1
+ 450 005b 02       		.byte	2
+ 451 005c 03       		.byte	3
+ 452 005d 00       		.byte	0
+ 453 005e 00       		.byte	0
+ 454 005f 00       		.byte	0
+ 455 0060 00       		.byte	0
+ 456 0061 09       		.byte	9
+ 457 0062 24       		.byte	36
+ 458 0063 03       		.byte	3
+ 459 0064 04       		.byte	4
+ 460 0065 01       		.byte	1
+ 461 0066 01       		.byte	1
+ 462 0067 00       		.byte	0
+ 463 0068 03       		.byte	3
+ 464 0069 00       		.byte	0
+ 465 006a 07       		.byte	7
+ 466 006b 05       		.byte	5
+ 467 006c 82       		.byte	-126
+ 468 006d 03       		.byte	3
+ 469 006e 40       		.byte	64
+ 470 006f 00       		.byte	0
+ 471 0070 01       		.byte	1
+ 472 0071 05       		.byte	5
+ 473 0072 25       		.byte	37
+ 474 0073 03       		.byte	3
+ 475 0074 40       		.byte	64
+ 476 0075 00       		.byte	0
+ 477 0076 09       		.byte	9
+ 478 0077 04       		.byte	4
+ 479 0078 01       		.byte	1
+ 480 0079 00       		.byte	0
+ 481 007a 01       		.byte	1
+ 482 007b 0E       		.byte	14
+ 483 007c 02       		.byte	2
+ 484 007d 00       		.byte	0
+ 485 007e 00       		.byte	0
+ 486 007f 0E       		.byte	14
+ 487 0080 24       		.byte	36
+ 488 0081 01       		.byte	1
+ 489 0082 01       		.byte	1
+ 490 0083 47       		.byte	71
+ 491 0084 00       		.byte	0
+ 492 0085 83       		.byte	-125
+ 493 0086 00       		.byte	0
+ 494 0087 04       		.byte	4
+ 495 0088 00       		.byte	0
+ 496 0089 00       		.byte	0
+ 497 008a 00       		.byte	0
+ 498 008b 01       		.byte	1
+ 499 008c 00       		.byte	0
+ 500 008d 1B       		.byte	27
+ 501 008e 24       		.byte	36
+ 502 008f 04       		.byte	4
+ 503 0090 01       		.byte	1
+ 504 0091 01       		.byte	1
+ 505 0092 59       		.byte	89
+ 506 0093 55       		.byte	85
+ 507 0094 59       		.byte	89
+ 508 0095 32       		.byte	50
+ 509 0096 00       		.byte	0
+ 510 0097 00       		.byte	0
+ 511 0098 10       		.byte	16
+ 512 0099 00       		.byte	0
+ 513 009a 80       		.byte	-128
+ 514 009b 00       		.byte	0
+ 515 009c 00       		.byte	0
+ 516 009d AA       		.byte	-86
+ 517 009e 00       		.byte	0
+ 518 009f 38       		.byte	56
+ 519 00a0 9B       		.byte	-101
+ 520 00a1 71       		.byte	113
+ 521 00a2 10       		.byte	16
+ 522 00a3 01       		.byte	1
+ 523 00a4 00       		.byte	0
+ 524 00a5 00       		.byte	0
+ 525 00a6 00       		.byte	0
+ 526 00a7 00       		.byte	0
+ 527 00a8 1E       		.byte	30
+ 528 00a9 24       		.byte	36
+ 529 00aa 05       		.byte	5
+ 530 00ab 01       		.byte	1
+ 531 00ac 00       		.byte	0
+ 532 00ad 80       		.byte	-128
+ 533 00ae 02       		.byte	2
+ 534 00af E0       		.byte	-32
+ 535 00b0 01       		.byte	1
+ 536 00b1 00       		.byte	0
+ 537 00b2 00       		.byte	0
+ 538 00b3 94       		.byte	-108
+ 539 00b4 11       		.byte	17
+ 540 00b5 00       		.byte	0
+ 541 00b6 00       		.byte	0
+ 542 00b7 94       		.byte	-108
+ 543 00b8 11       		.byte	17
+ 544 00b9 00       		.byte	0
+ 545 00ba 60       		.byte	96
+ 546 00bb 09       		.byte	9
+ 547 00bc 00       		.byte	0
+ 548 00bd 15       		.byte	21
+ 549 00be 16       		.byte	22
+ 550 00bf 05       		.byte	5
+ 551 00c0 00       		.byte	0
+ 552 00c1 01       		.byte	1
+ 553 00c2 15       		.byte	21
+ 554 00c3 16       		.byte	22
+ 555 00c4 05       		.byte	5
+ 556 00c5 00       		.byte	0
+ 557 00c6 07       		.byte	7
+ 558 00c7 05       		.byte	5
+ 559 00c8 83       		.byte	-125
+ 560 00c9 02       		.byte	2
+ 561 00ca 00       		.byte	0
+ 562 00cb 02       		.byte	2
+ 563 00cc 00       		.byte	0
+ 564              		.global	esUVCUSBFSConfigDscr
+ 565 00cd 000000   		.section	.rodata.esUVCUSBFSConfigDscr,"a",%progbits
+ 566              		.align	2
+ 569              	esUVCUSBFSConfigDscr:
+ 570 0000 09       		.byte	9
+ 571 0001 02       		.byte	2
+ 572 0002 09       		.byte	9
+ 573 0003 00       		.byte	0
+ 574 0004 00       		.byte	0
+ 575 0005 01       		.byte	1
+ 576 0006 00       		.byte	0
+ 577 0007 80       		.byte	-128
+ 578 0008 32       		.byte	50
+ 579              		.global	esUVCUSBStringLangIDDscr
+ 580 0009 000000   		.section	.rodata.esUVCUSBStringLangIDDscr,"a",%progbits
+ 581              		.align	2
+ 584              	esUVCUSBStringLangIDDscr:
+ 585 0000 04       		.byte	4
+ 586 0001 03       		.byte	3
+ 587 0002 09       		.byte	9
+ 588 0003 04       		.byte	4
+ 589              		.global	esUVCUSBManufactureDscr
+ 590              		.section	.rodata.esUVCUSBManufactureDscr,"a",%progbits
+ 591              		.align	2
+ 594              	esUVCUSBManufactureDscr:
+ 595 0000 1A       		.byte	26
+ 596 0001 03       		.byte	3
+ 597 0002 56       		.byte	86
+ 598 0003 00       		.byte	0
+ 599 0004 69       		.byte	105
+ 600 0005 00       		.byte	0
+ 601 0006 64       		.byte	100
+ 602 0007 00       		.byte	0
+ 603 0008 65       		.byte	101
+ 604 0009 00       		.byte	0
+ 605 000a 6F       		.byte	111
+ 606 000b 00       		.byte	0
+ 607 000c 6C       		.byte	108
+ 608 000d 00       		.byte	0
+ 609 000e 6F       		.byte	111
+ 610 000f 00       		.byte	0
+ 611 0010 67       		.byte	103
+ 612 0011 00       		.byte	0
+ 613 0012 79       		.byte	121
+ 614 0013 00       		.byte	0
+ 615 0014 49       		.byte	73
+ 616 0015 00       		.byte	0
+ 617 0016 6E       		.byte	110
+ 618 0017 00       		.byte	0
+ 619 0018 63       		.byte	99
+ 620 0019 00       		.byte	0
+ 621              		.global	esUVCUSBProductDscr
+ 622 001a 0000     		.section	.rodata.esUVCUSBProductDscr,"a",%progbits
+ 623              		.align	2
+ 626              	esUVCUSBProductDscr:
+ 627 0000 38       		.byte	56
+ 628 0001 03       		.byte	3
+ 629 0002 56       		.byte	86
+ 630 0003 00       		.byte	0
+ 631 0004 49       		.byte	73
+ 632 0005 00       		.byte	0
+ 633 0006 53       		.byte	83
+ 634 0007 00       		.byte	0
+ 635 0008 2D       		.byte	45
+ 636 0009 00       		.byte	0
+ 637 000a 43       		.byte	67
+ 638 000b 00       		.byte	0
+ 639 000c 58       		.byte	88
+ 640 000d 00       		.byte	0
+ 641 000e 33       		.byte	51
+ 642 000f 00       		.byte	0
+ 643 0010 20       		.byte	32
+ 644 0011 00       		.byte	0
+ 645 0012 4D       		.byte	77
+ 646 0013 00       		.byte	0
+ 647 0014 49       		.byte	73
+ 648 0015 00       		.byte	0
+ 649 0016 50       		.byte	80
+ 650 0017 00       		.byte	0
+ 651 0018 49       		.byte	73
+ 652 0019 00       		.byte	0
+ 653 001a 37       		.byte	55
+ 654 001b 00       		.byte	0
+ 655 001c 32       		.byte	50
+ 656 001d 00       		.byte	0
+ 657 001e 30       		.byte	48
+ 658 001f 00       		.byte	0
+ 659 0020 20       		.byte	32
+ 660 0021 00       		.byte	0
+ 661 0022 77       		.byte	119
+ 662 0023 00       		.byte	0
+ 663 0024 69       		.byte	105
+ 664 0025 00       		.byte	0
+ 665 0026 74       		.byte	116
+ 666 0027 00       		.byte	0
+ 667 0028 68       		.byte	104
+ 668 0029 00       		.byte	0
+ 669 002a 20       		.byte	32
+ 670 002b 00       		.byte	0
+ 671 002c 4F       		.byte	79
+ 672 002d 00       		.byte	0
+ 673 002e 56       		.byte	86
+ 674 002f 00       		.byte	0
+ 675 0030 35       		.byte	53
+ 676 0031 00       		.byte	0
+ 677 0032 36       		.byte	54
+ 678 0033 00       		.byte	0
+ 679 0034 34       		.byte	52
+ 680 0035 00       		.byte	0
+ 681 0036 30       		.byte	48
+ 682 0037 00       		.byte	0
+ 683              		.global	esUVCUSBConfigSSDscr
+ 684              		.section	.rodata.esUVCUSBConfigSSDscr,"a",%progbits
+ 685              		.align	2
+ 688              	esUVCUSBConfigSSDscr:
+ 689 0000 10       		.byte	16
+ 690 0001 03       		.byte	3
+ 691 0002 55       		.byte	85
+ 692 0003 00       		.byte	0
+ 693 0004 53       		.byte	83
+ 694 0005 00       		.byte	0
+ 695 0006 42       		.byte	66
+ 696 0007 00       		.byte	0
+ 697 0008 2D       		.byte	45
+ 698 0009 00       		.byte	0
+ 699 000a 33       		.byte	51
+ 700 000b 00       		.byte	0
+ 701 000c 2E       		.byte	46
+ 702 000d 00       		.byte	0
+ 703 000e 30       		.byte	48
+ 704 000f 00       		.byte	0
+ 705              		.global	esUVCUSBConfigHSDscr
+ 706              		.section	.rodata.esUVCUSBConfigHSDscr,"a",%progbits
+ 707              		.align	2
+ 710              	esUVCUSBConfigHSDscr:
+ 711 0000 10       		.byte	16
+ 712 0001 03       		.byte	3
+ 713 0002 55       		.byte	85
+ 714 0003 00       		.byte	0
+ 715 0004 53       		.byte	83
+ 716 0005 00       		.byte	0
+ 717 0006 42       		.byte	66
+ 718 0007 00       		.byte	0
+ 719 0008 2D       		.byte	45
+ 720 0009 00       		.byte	0
+ 721 000a 32       		.byte	50
+ 722 000b 00       		.byte	0
+ 723 000c 2E       		.byte	46
+ 724 000d 00       		.byte	0
+ 725 000e 31       		.byte	49
+ 726 000f 00       		.byte	0
+ 727              		.global	esUVCUSBConfigFSDscr
+ 728              		.section	.rodata.esUVCUSBConfigFSDscr,"a",%progbits
+ 729              		.align	2
+ 732              	esUVCUSBConfigFSDscr:
+ 733 0000 10       		.byte	16
+ 734 0001 03       		.byte	3
+ 735 0002 55       		.byte	85
+ 736 0003 00       		.byte	0
+ 737 0004 53       		.byte	83
+ 738 0005 00       		.byte	0
+ 739 0006 42       		.byte	66
+ 740 0007 00       		.byte	0
+ 741 0008 2D       		.byte	45
+ 742 0009 00       		.byte	0
+ 743 000a 31       		.byte	49
+ 744 000b 00       		.byte	0
+ 745 000c 2E       		.byte	46
+ 746 000d 00       		.byte	0
+ 747 000e 31       		.byte	49
+ 748 000f 00       		.byte	0
+ 749              		.global	glProbeCtrl
+ 750              		.section	.data.glProbeCtrl,"aw",%progbits
+ 751              		.align	2
+ 754              	glProbeCtrl:
+ 755 0000 00       		.byte	0
+ 756 0001 00       		.byte	0
+ 757 0002 01       		.byte	1
+ 758 0003 01       		.byte	1
+ 759 0004 0A       		.byte	10
+ 760 0005 8B       		.byte	-117
+ 761 0006 02       		.byte	2
+ 762 0007 00       		.byte	0
+ 763 0008 00       		.byte	0
+ 764 0009 00       		.byte	0
+ 765 000a 00       		.byte	0
+ 766 000b 00       		.byte	0
+ 767 000c 00       		.byte	0
+ 768 000d 00       		.byte	0
+ 769 000e 00       		.byte	0
+ 770 000f 00       		.byte	0
+ 771 0010 00       		.byte	0
+ 772 0011 00       		.byte	0
+ 773 0012 00       		.byte	0
+ 774 0013 48       		.byte	72
+ 775 0014 3F       		.byte	63
+ 776 0015 00       		.byte	0
+ 777 0016 00       		.byte	0
+ 778 0017 90       		.byte	-112
+ 779 0018 00       		.byte	0
+ 780 0019 00       		.byte	0
+ 781              		.global	gl1080pProbeCtrl
+ 782 001a 0000     		.section	.rodata.gl1080pProbeCtrl,"a",%progbits
+ 783              		.align	2
+ 786              	gl1080pProbeCtrl:
+ 787 0000 00       		.byte	0
+ 788 0001 00       		.byte	0
+ 789 0002 01       		.byte	1
+ 790 0003 01       		.byte	1
+ 791 0004 15       		.byte	21
+ 792 0005 16       		.byte	22
+ 793 0006 05       		.byte	5
+ 794 0007 00       		.byte	0
+ 795 0008 00       		.byte	0
+ 796 0009 00       		.byte	0
+ 797 000a 00       		.byte	0
+ 798 000b 00       		.byte	0
+ 799 000c 00       		.byte	0
+ 800 000d 00       		.byte	0
+ 801 000e 00       		.byte	0
+ 802 000f 00       		.byte	0
+ 803 0010 00       		.byte	0
+ 804 0011 00       		.byte	0
+ 805 0012 00       		.byte	0
+ 806 0013 48       		.byte	72
+ 807 0014 3F       		.byte	63
+ 808 0015 00       		.byte	0
+ 809 0016 00       		.byte	0
+ 810 0017 90       		.byte	-112
+ 811 0018 00       		.byte	0
+ 812 0019 00       		.byte	0
+ 813              		.global	glVga60ProbeCtrl
+ 814 001a 0000     		.section	.rodata.glVga60ProbeCtrl,"a",%progbits
+ 815              		.align	2
+ 818              	glVga60ProbeCtrl:
+ 819 0000 00       		.byte	0
+ 820 0001 00       		.byte	0
+ 821 0002 01       		.byte	1
+ 822 0003 02       		.byte	2
+ 823 0004 0A       		.byte	10
+ 824 0005 8B       		.byte	-117
+ 825 0006 02       		.byte	2
+ 826 0007 00       		.byte	0
+ 827 0008 00       		.byte	0
+ 828 0009 00       		.byte	0
+ 829 000a 00       		.byte	0
+ 830 000b 00       		.byte	0
+ 831 000c 00       		.byte	0
+ 832 000d 00       		.byte	0
+ 833 000e 00       		.byte	0
+ 834 000f 00       		.byte	0
+ 835 0010 00       		.byte	0
+ 836 0011 00       		.byte	0
+ 837 0012 00       		.byte	0
+ 838 0013 60       		.byte	96
+ 839 0014 09       		.byte	9
+ 840 0015 00       		.byte	0
+ 841 0016 00       		.byte	0
+ 842 0017 90       		.byte	-112
+ 843 0018 00       		.byte	0
+ 844 0019 00       		.byte	0
+ 845              		.global	gl720pProbeCtrl
+ 846 001a 0000     		.section	.rodata.gl720pProbeCtrl,"a",%progbits
+ 847              		.align	2
+ 850              	gl720pProbeCtrl:
+ 851 0000 00       		.byte	0
+ 852 0001 00       		.byte	0
+ 853 0002 01       		.byte	1
+ 854 0003 03       		.byte	3
+ 855 0004 0A       		.byte	10
+ 856 0005 8B       		.byte	-117
+ 857 0006 02       		.byte	2
+ 858 0007 00       		.byte	0
+ 859 0008 00       		.byte	0
+ 860 0009 00       		.byte	0
+ 861 000a 00       		.byte	0
+ 862 000b 00       		.byte	0
+ 863 000c 00       		.byte	0
+ 864 000d 00       		.byte	0
+ 865 000e 00       		.byte	0
+ 866 000f 00       		.byte	0
+ 867 0010 00       		.byte	0
+ 868 0011 00       		.byte	0
+ 869 0012 00       		.byte	0
+ 870 0013 20       		.byte	32
+ 871 0014 1C       		.byte	28
+ 872 0015 00       		.byte	0
+ 873 0016 00       		.byte	0
+ 874 0017 90       		.byte	-112
+ 875 0018 00       		.byte	0
+ 876 0019 00       		.byte	0
+ 877              		.global	gl5MpProbeCtrl
+ 878 001a 0000     		.section	.rodata.gl5MpProbeCtrl,"a",%progbits
+ 879              		.align	2
+ 882              	gl5MpProbeCtrl:
+ 883 0000 00       		.byte	0
+ 884 0001 00       		.byte	0
+ 885 0002 01       		.byte	1
+ 886 0003 04       		.byte	4
+ 887 0004 2A       		.byte	42
+ 888 0005 2C       		.byte	44
+ 889 0006 0A       		.byte	10
+ 890 0007 00       		.byte	0
+ 891 0008 00       		.byte	0
+ 892 0009 00       		.byte	0
+ 893 000a 00       		.byte	0
+ 894 000b 00       		.byte	0
+ 895 000c 00       		.byte	0
+ 896 000d 00       		.byte	0
+ 897 000e 00       		.byte	0
+ 898 000f 00       		.byte	0
+ 899 0010 00       		.byte	0
+ 900 0011 00       		.byte	0
+ 901 0012 00       		.byte	0
+ 902 0013 C6       		.byte	-58
+ 903 0014 99       		.byte	-103
+ 904 0015 00       		.byte	0
+ 905 0016 00       		.byte	0
+ 906 0017 90       		.byte	-112
+ 907 0018 00       		.byte	0
+ 908 0019 00       		.byte	0
+ 909              		.global	glVga30ProbeCtrl
+ 910 001a 0000     		.section	.rodata.glVga30ProbeCtrl,"a",%progbits
+ 911              		.align	2
+ 914              	glVga30ProbeCtrl:
+ 915 0000 00       		.byte	0
+ 916 0001 00       		.byte	0
+ 917 0002 01       		.byte	1
+ 918 0003 01       		.byte	1
+ 919 0004 0A       		.byte	10
+ 920 0005 8B       		.byte	-117
+ 921 0006 02       		.byte	2
+ 922 0007 00       		.byte	0
+ 923 0008 00       		.byte	0
+ 924 0009 00       		.byte	0
+ 925 000a 00       		.byte	0
+ 926 000b 00       		.byte	0
+ 927 000c 00       		.byte	0
+ 928 000d 00       		.byte	0
+ 929 000e 00       		.byte	0
+ 930 000f 00       		.byte	0
+ 931 0010 00       		.byte	0
+ 932 0011 00       		.byte	0
+ 933 0012 00       		.byte	0
+ 934 0013 60       		.byte	96
+ 935 0014 09       		.byte	9
+ 936 0015 00       		.byte	0
+ 937 0016 00       		.byte	0
+ 938 0017 30       		.byte	48
+ 939 0018 00       		.byte	0
+ 940 0019 00       		.byte	0
+ 941              		.global	glStillProbeCtrl
+ 942 001a 0000     		.section	.data.glStillProbeCtrl,"aw",%progbits
+ 943              		.align	2
+ 946              	glStillProbeCtrl:
+ 947 0000 01       		.byte	1
+ 948 0001 01       		.byte	1
+ 949 0002 00       		.byte	0
+ 950 0003 00       		.byte	0
+ 951 0004 C6       		.byte	-58
+ 952 0005 99       		.byte	-103
+ 953 0006 00       		.byte	0
+ 954 0007 00       		.byte	0
+ 955 0008 30       		.byte	48
+ 956 0009 00       		.byte	0
+ 957 000a 00       		.byte	0
+ 958              		.global	cfgUvc5Mp15NoMclk
+ 959 000b 00       		.section	.data.cfgUvc5Mp15NoMclk,"aw",%progbits
+ 960              		.align	2
+ 963              	cfgUvc5Mp15NoMclk:
+ 964 0000 26       		.byte	38
+ 965 0001 02       		.byte	2
+ 966 0002 01       		.byte	1
+ 967 0003 00       		.space	1
+ 968 0004 4000     		.short	64
+ 969 0006 00       		.byte	0
+ 970 0007 00       		.byte	0
+ 971 0008 00       		.byte	0
+ 972 0009 00       		.space	1
+ 973 000a 0000     		.short	0
+ 974 000c 02       		.byte	2
+ 975 000d 00       		.space	1
+ 976 000e 200A     		.short	2592
+ 977 0010 0100     		.short	1
+ 978              		.global	cfgUvc1080p30NoMclk
+ 979 0012 0000     		.section	.data.cfgUvc1080p30NoMclk,"aw",%progbits
+ 980              		.align	2
+ 983              	cfgUvc1080p30NoMclk:
+ 984 0000 26       		.byte	38
+ 985 0001 02       		.byte	2
+ 986 0002 01       		.byte	1
+ 987 0003 00       		.space	1
+ 988 0004 3E00     		.short	62
+ 989 0006 00       		.byte	0
+ 990 0007 00       		.byte	0
+ 991 0008 00       		.byte	0
+ 992 0009 00       		.space	1
+ 993 000a 0000     		.short	0
+ 994 000c 00       		.byte	0
+ 995 000d 00       		.space	1
+ 996 000e 8007     		.short	1920
+ 997 0010 0100     		.short	1
+ 998              		.global	cfgUvc720p60NoMclk
+ 999 0012 0000     		.section	.data.cfgUvc720p60NoMclk,"aw",%progbits
+ 1000              		.align	2
+ 1003              	cfgUvc720p60NoMclk:
+ 1004 0000 16       		.byte	22
+ 1005 0001 01       		.byte	1
+ 1006 0002 01       		.byte	1
+ 1007 0003 00       		.space	1
+ 1008 0004 2000     		.short	32
+ 1009 0006 01       		.byte	1
+ 1010 0007 01       		.byte	1
+ 1011 0008 01       		.byte	1
+ 1012 0009 00       		.space	1
+ 1013 000a 0000     		.short	0
+ 1014 000c 00       		.byte	0
+ 1015 000d 00       		.space	1
+ 1016 000e 0005     		.short	1280
+ 1017 0010 0100     		.short	1
+ 1018              		.global	cfgUvcVgaNoMclk
+ 1019 0012 0000     		.section	.data.cfgUvcVgaNoMclk,"aw",%progbits
+ 1020              		.align	2
+ 1023              	cfgUvcVgaNoMclk:
+ 1024 0000 26       		.byte	38
+ 1025 0001 01       		.byte	1
+ 1026 0002 01       		.byte	1
+ 1027 0003 00       		.space	1
+ 1028 0004 5A00     		.short	90
+ 1029 0006 02       		.byte	2
+ 1030 0007 02       		.byte	2
+ 1031 0008 00       		.byte	0
+ 1032 0009 00       		.space	1
+ 1033 000a 0000     		.short	0
+ 1034 000c 00       		.byte	0
+ 1035 000d 00       		.space	1
+ 1036 000e 8002     		.short	640
+ 1037 0010 0100     		.short	1
+ 1038              		.global	cfgUvcVga30NoMclk
+ 1039 0012 0000     		.section	.data.cfgUvcVga30NoMclk,"aw",%progbits
+ 1040              		.align	2
+ 1043              	cfgUvcVga30NoMclk:
+ 1044 0000 26       		.byte	38
+ 1045 0001 01       		.byte	1
+ 1046 0002 04       		.byte	4
+ 1047 0003 00       		.space	1
+ 1048 0004 6F00     		.short	111
+ 1049 0006 01       		.byte	1
+ 1050 0007 02       		.byte	2
+ 1051 0008 00       		.byte	0
+ 1052 0009 00       		.space	1
+ 1053 000a 0000     		.short	0
+ 1054 000c 00       		.byte	0
+ 1055 000d 00       		.space	1
+ 1056 000e 0005     		.short	1280
+ 1057 0010 0100     		.short	1
+ 1058 0012 0000     		.text
+ 1059              	.Letext0:
+ 1060              		.file 1 "c:\\program files (x86)\\cypress\\ez-usb fx3 sdk\\1.3\\arm gcc\\arm-none-eabi\\include\\s
+ 1061              		.file 2 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3ty
+ 1062              		.file 3 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3us
+ 1063              		.file 4 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/tx_por
+ 1064              		.file 5 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/tx_api
+ 1065              		.file 6 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3dm
+ 1066              		.file 7 "C:\\Program Files (x86)\\Cypress\\EZ-USB FX3 SDK\\1.3\\firmware\\u3p_firmware\\inc/cyu3mi
+ 1067              		.file 8 "../cmdqu.h"
+ 1068              		.file 9 "../CX3RDKOV5640Dscr.c"
+ 1069              		.file 10 "../CX3RDKOV5640.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 CX3RDKOV5640Dscr.c
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:17     .bss.glEp0Buffer:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:20     .bss.glEp0Buffer:00000000 glEp0Buffer
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:17     .bss.glEp0Buffer:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:20     .bss.glEp0Buffer:00000000 glEp0Buffer
                             *COM*:000000a8 uvcAppThread
                             *COM*:000000a8 SenAppThread
                             *COM*:00000028 glTimerEvent
                             *COM*:00000020 cmdQu
                             *COM*:00000020 statQu
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:32     .rodata.esUVCUSB30DeviceDscr:00000000 esUVCUSB30DeviceDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:29     .rodata.esUVCUSB30DeviceDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:56     .rodata.esUVCUSB20DeviceDscr:00000000 esUVCUSB20DeviceDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:53     .rodata.esUVCUSB20DeviceDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:80     .rodata.esUVCUSBBOSDscr:00000000 esUVCUSBBOSDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:77     .rodata.esUVCUSBBOSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:108    .rodata.esUVCUSBDeviceQualDscr:00000000 esUVCUSBDeviceQualDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:105    .rodata.esUVCUSBDeviceQualDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:124    .rodata.esUVCUSBSSConfigDscr:00000000 esUVCUSBSSConfigDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:121    .rodata.esUVCUSBSSConfigDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:448    .rodata.esUVCUSBHSConfigDscr:00000000 esUVCUSBHSConfigDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:445    .rodata.esUVCUSBHSConfigDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:659    .rodata.esUVCUSBFSConfigDscr:00000000 esUVCUSBFSConfigDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:656    .rodata.esUVCUSBFSConfigDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:674    .rodata.esUVCUSBStringLangIDDscr:00000000 esUVCUSBStringLangIDDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:671    .rodata.esUVCUSBStringLangIDDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:684    .rodata.esUVCUSBManufactureDscr:00000000 esUVCUSBManufactureDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:681    .rodata.esUVCUSBManufactureDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:716    .rodata.esUVCUSBProductDscr:00000000 esUVCUSBProductDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:713    .rodata.esUVCUSBProductDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:778    .rodata.esUVCUSBConfigSSDscr:00000000 esUVCUSBConfigSSDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:775    .rodata.esUVCUSBConfigSSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:800    .rodata.esUVCUSBConfigHSDscr:00000000 esUVCUSBConfigHSDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:797    .rodata.esUVCUSBConfigHSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:822    .rodata.esUVCUSBConfigFSDscr:00000000 esUVCUSBConfigFSDscr
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:819    .rodata.esUVCUSBConfigFSDscr:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:844    .data.glProbeCtrl:00000000 glProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:841    .data.glProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:876    .rodata.gl1080pProbeCtrl:00000000 gl1080pProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:873    .rodata.gl1080pProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:908    .rodata.glVga60ProbeCtrl:00000000 glVga60ProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:905    .rodata.glVga60ProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:940    .rodata.gl720pProbeCtrl:00000000 gl720pProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:937    .rodata.gl720pProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:972    .rodata.gl5MpProbeCtrl:00000000 gl5MpProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:969    .rodata.gl5MpProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1004   .rodata.glVga30ProbeCtrl:00000000 glVga30ProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1001   .rodata.glVga30ProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1036   .data.glStillProbeCtrl:00000000 glStillProbeCtrl
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1033   .data.glStillProbeCtrl:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1053   .data.cfgUvc5Mp15NoMclk:00000000 cfgUvc5Mp15NoMclk
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1050   .data.cfgUvc5Mp15NoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1073   .data.cfgUvc1080p30NoMclk:00000000 cfgUvc1080p30NoMclk
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1070   .data.cfgUvc1080p30NoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1093   .data.cfgUvc720p60NoMclk:00000000 cfgUvc720p60NoMclk
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1090   .data.cfgUvc720p60NoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1113   .data.cfgUvcVgaNoMclk:00000000 cfgUvcVgaNoMclk
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1110   .data.cfgUvcVgaNoMclk:00000000 $d
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1133   .data.cfgUvcVga30NoMclk:00000000 cfgUvcVga30NoMclk
-C:\Users\wcheng\AppData\Local\Temp\cc5ynIts.s:1130   .data.cfgUvcVga30NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:32     .rodata.esUVCUSB30DeviceDscr:00000000 esUVCUSB30DeviceDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:29     .rodata.esUVCUSB30DeviceDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:56     .rodata.esUVCUSB20DeviceDscr:00000000 esUVCUSB20DeviceDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:53     .rodata.esUVCUSB20DeviceDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:80     .rodata.esUVCUSBBOSDscr:00000000 esUVCUSBBOSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:77     .rodata.esUVCUSBBOSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:108    .rodata.esUVCUSBDeviceQualDscr:00000000 esUVCUSBDeviceQualDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:105    .rodata.esUVCUSBDeviceQualDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:124    .rodata.esUVCUSBSSConfigDscr:00000000 esUVCUSBSSConfigDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:121    .rodata.esUVCUSBSSConfigDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:358    .rodata.esUVCUSBHSConfigDscr:00000000 esUVCUSBHSConfigDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:355    .rodata.esUVCUSBHSConfigDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:569    .rodata.esUVCUSBFSConfigDscr:00000000 esUVCUSBFSConfigDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:566    .rodata.esUVCUSBFSConfigDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:584    .rodata.esUVCUSBStringLangIDDscr:00000000 esUVCUSBStringLangIDDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:581    .rodata.esUVCUSBStringLangIDDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:594    .rodata.esUVCUSBManufactureDscr:00000000 esUVCUSBManufactureDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:591    .rodata.esUVCUSBManufactureDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:626    .rodata.esUVCUSBProductDscr:00000000 esUVCUSBProductDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:623    .rodata.esUVCUSBProductDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:688    .rodata.esUVCUSBConfigSSDscr:00000000 esUVCUSBConfigSSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:685    .rodata.esUVCUSBConfigSSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:710    .rodata.esUVCUSBConfigHSDscr:00000000 esUVCUSBConfigHSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:707    .rodata.esUVCUSBConfigHSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:732    .rodata.esUVCUSBConfigFSDscr:00000000 esUVCUSBConfigFSDscr
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:729    .rodata.esUVCUSBConfigFSDscr:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:754    .data.glProbeCtrl:00000000 glProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:751    .data.glProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:786    .rodata.gl1080pProbeCtrl:00000000 gl1080pProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:783    .rodata.gl1080pProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:818    .rodata.glVga60ProbeCtrl:00000000 glVga60ProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:815    .rodata.glVga60ProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:850    .rodata.gl720pProbeCtrl:00000000 gl720pProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:847    .rodata.gl720pProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:882    .rodata.gl5MpProbeCtrl:00000000 gl5MpProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:879    .rodata.gl5MpProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:914    .rodata.glVga30ProbeCtrl:00000000 glVga30ProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:911    .rodata.glVga30ProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:946    .data.glStillProbeCtrl:00000000 glStillProbeCtrl
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:943    .data.glStillProbeCtrl:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:963    .data.cfgUvc5Mp15NoMclk:00000000 cfgUvc5Mp15NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:960    .data.cfgUvc5Mp15NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:983    .data.cfgUvc1080p30NoMclk:00000000 cfgUvc1080p30NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:980    .data.cfgUvc1080p30NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:1003   .data.cfgUvc720p60NoMclk:00000000 cfgUvc720p60NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:1000   .data.cfgUvc720p60NoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:1023   .data.cfgUvcVgaNoMclk:00000000 cfgUvcVgaNoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:1020   .data.cfgUvcVgaNoMclk:00000000 $d
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:1043   .data.cfgUvcVga30NoMclk:00000000 cfgUvcVga30NoMclk
+C:\Users\wcheng\AppData\Local\Temp\ccOlnScR.s:1040   .data.cfgUvcVga30NoMclk:00000000 $d
                            .group:00000000 wm4.1.29463082a45126943f020ea30bda05c8
                            .group:00000000 wm4.newlib.h.8.384a112feabb3bef7b573ae48cde2e3b
                            .group:00000000 wm4.features.h.22.6a4ca7cd053637cc1d0db6c16f39b2d7

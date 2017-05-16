@@ -473,7 +473,7 @@ esUVCUvcAppDmaCallback (
             {
             	glStillCaptured = CyFalse;
             	glUVCHeader[1]^=ES_UVC_HEADER_STILL_IMAGE;
-            	glFrameIndexToSet = glCurrentFrameIndex;
+            	glFrameIndexToSet = glCurrentFrameIndex;  //for still test
             	CyU3PEventSet(&glTimerEvent, ES_TIMER_RESET_EVENT,CYU3P_EVENT_OR);
             }
             if(glStillCaptureStart == CyTrue)
@@ -877,7 +877,7 @@ esUVCUvcApplnUSBSetupCB (
 #endif
 							}
 							//CyU3PThreadSleep(1000);
-							SensorGetControl(0x02, 0x30);
+							SensorGetControl(0x02, 0x30); //the start up mechanism is in the microcode.
 						}
 					}
                 }
@@ -931,7 +931,7 @@ esUVCUvcApplnUSBSetupCB (
 					{
 						if(glStillTriggerCtrl == 0x01)
 						{
-							glStillSkip = 3;
+							glStillSkip = 3; //for still test
 							glStillCaptureStart = CyTrue;
 						}
 					}
