@@ -474,7 +474,7 @@ esUVCUvcAppDmaCallback (
             	glStillCaptured = CyFalse;
             	glUVCHeader[1]^=ES_UVC_HEADER_STILL_IMAGE;
             	glFrameIndexToSet = glCurrentFrameIndex;  //for still test
-            	CyU3PEventSet(&glTimerEvent, ES_TIMER_RESET_EVENT,CYU3P_EVENT_OR);
+            	//CyU3PEventSet(&glTimerEvent, ES_TIMER_RESET_EVENT,CYU3P_EVENT_OR);
             }
             if(glStillCaptureStart == CyTrue)
             {
@@ -482,7 +482,7 @@ esUVCUvcAppDmaCallback (
 				{
             		glStillSkip--;
             		glFrameIndexToSet = 4;
-					CyU3PEventSet(&glTimerEvent, ES_TIMER_RESET_EVENT,CYU3P_EVENT_OR);
+					//CyU3PEventSet(&glTimerEvent, ES_TIMER_RESET_EVENT,CYU3P_EVENT_OR);
 					//CyU3PDebugPrint (4, "\n\rCY_U3P_USB_EVENT_SETINTF: glstillSkip 3");
 				}
             	else if(glStillSkip <= 0)
