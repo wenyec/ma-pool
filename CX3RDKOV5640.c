@@ -478,17 +478,19 @@ esUVCUvcAppDmaCallback (
             }
             if(glStillCaptureStart == CyTrue)
             {
-            	if(glStillSkip == 3)
+            	if(glStillSkip >= 3)
 				{
             		glStillSkip--;
             		glFrameIndexToSet = 4;
 					CyU3PEventSet(&glTimerEvent, ES_TIMER_RESET_EVENT,CYU3P_EVENT_OR);
+					//CyU3PDebugPrint (4, "\n\rCY_U3P_USB_EVENT_SETINTF: glstillSkip 3");
 				}
-            	else if(glStillSkip == 0)
+            	else if(glStillSkip <= 0)
             	{
             		glStillCaptureStart = CyFalse;
 					glStillCaptured = CyTrue;
-					glUVCHeader[1]^=ES_UVC_HEADER_STILL_IMAGE;
+					glUVCHeader[1]^=ES_UVC_HEADER_STILL_IMAGE; //end still flag at still end
+					//CyU3PDebugPrint (4, "\n\rset UVC__STILL_IMAGE: glstillSkip 0");
             	}
             	else
             		glStillSkip--;
@@ -931,7 +933,7 @@ esUVCUvcApplnUSBSetupCB (
 					{
 						if(glStillTriggerCtrl == 0x01)
 						{
-							glStillSkip = 3; //for still test
+							glStillSkip = 3; //for still test 0;//
 							glStillCaptureStart = CyTrue;
 						}
 					}
@@ -1921,6 +1923,7 @@ esUVCUvcAppThread_Entry (
             	//TODO Change this function with "Sensor Specific" function to write the sensor settings & configure the CX3 for supported resolutions
             	esSetCameraResolution(glFrameIndexToSet);
             	esUVCUvcApplnStart();
+            	SensorGetControl(0x02, 0x30); //using this statement to start the video by microcode.
 #ifdef VISDebug
     CyU3PDebugPrint (4, "\n\rES_TIMER_RESET_EVENT: esUVCUvcApplnStart");
 #endif

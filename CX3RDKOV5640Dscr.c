@@ -341,8 +341,10 @@ const uint8_t esUVCUSBSSConfigDscr[] =
 	0x03,
 	0x00,
 	0x01,					//No of frame Resolutions Follows
-	0x20,0x0A,				//2592x1944
-	0x98,0x07,
+	//0x20,0x0A,				//2592x1944
+	//0x98,0x07,
+    0x00, 0x05,                         /* Width in pixel: 720 */
+    0xD0, 0x02,                         /* Height in pixel: 1280 */
 	0x00,
 
     /* Endpoint Descriptor for BULK Streaming Video Data */
