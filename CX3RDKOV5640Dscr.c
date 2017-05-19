@@ -35,8 +35,8 @@ const uint8_t esUVCUSB30DeviceDscr[] =
     0x02,                               /* Device Sub-class */
     0x01,                               /* Device protocol */
     0x09,                               /* Maxpacket size for EP0 : 2^9 */
-    0x60, 0x25,                         /* Vendor ID */
-    0x51, 0xD0,                         /* Product ID */
+    0xBD,0x1B,//0x60, 0x25,                         /* Vendor ID */
+    0x50,0xf1,//0x51, 0xD0,                         /* Product ID */
     0x00, 0x00,                         /* Device release number */
     0x01,                               /* Manufacture string index */
     0x02,                               /* Product string index */
@@ -54,8 +54,8 @@ const uint8_t esUVCUSB20DeviceDscr[] =
     0x02,                               /* Device sub-class */
     0x01,                               /* Device protocol */
     0x40,                               /* Maxpacket size for EP0 : 64 bytes */
-    0x60, 0x25,                         /* Vendor ID */
-    0x51, 0xD0,                         /* Product ID */
+    0xBD,0x1B,//0x60, 0x25,                         /* Vendor ID */
+    0x50,0xf1,//0x51, 0xD0,                         /* Product ID */
     0x00, 0x00,                         /* Device release number */
     0x01,                               /* Manufacture string index */
     0x02,                               /* Product string index */
@@ -592,7 +592,7 @@ const uint8_t esUVCUSBManufactureDscr[] =
 /* Standard product string descriptor */
 const uint8_t esUVCUSBProductDscr[] =
 {
-	0x38,                           /* Descriptor Size */
+	0x20,   //0x38,                        /* Descriptor Size */
 	CY_U3P_USB_STRING_DESCR,        /* Device descriptor type */
 	'V',0x00,
 	'I',0x00,
@@ -609,18 +609,18 @@ const uint8_t esUVCUSBProductDscr[] =
 	'7',0x00,
 	'2',0x00,
 	'0',0x00,
-	' ',0x00,
-	'w',0x00,
-	'i',0x00,
-	't',0x00,
-	'h',0x00,
-	' ',0x00,
-	'O',0x00,
-	'V',0x00,
-	'5',0x00,
-	'6',0x00,
-	'4',0x00,
-	'0',0x00,
+//	' ',0x00,
+//	'w',0x00,
+//	'i',0x00,
+//	't',0x00,
+//	'h',0x00,
+//	' ',0x00,
+//	'O',0x00,
+//	'V',0x00,
+//	'5',0x00,
+//	'6',0x00,
+//	'4',0x00,
+//	'0',0x00,
 };
 
 /* Standard product string descriptor */
