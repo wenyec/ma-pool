@@ -41,7 +41,7 @@ volatile static uint8_t ROIMode = 0x01;				/* for 720p has 0x04 (ROI) 0x05 and 0
 
 /* the UVC control requests handler */
 volatile static SensorCtrl PUCBLC =
-		{BLCModeRegAct,		//Reg1: the command register address1
+		{0x0F,/*BLCModeRegAct,*/		//Reg1: the command register address1
 		 BLCModeRegGain,	//Reg2: the command register address2
 		 2,					//UVCLn: the command length
 		 0,					//UVCMinLo: the command minimum value low byte
@@ -107,7 +107,7 @@ volatile static SensorCtrl PUCContrast =
 //volatile static SensorCtrl PUCGain;
 //		{/*4*/MainsFreqReg        , MainsFreqReg         , 2,    0,    0,    1,    0, 1, 0, 3, 0,   1, 0,   1,   0, I2C_EAGLESDP_ADDR,  CyTrue, CyFalse, 0},  // frequency 0=50Hz(PLA); 1=60Hz(NTSC).
 volatile static SensorCtrl PUCPLFreq =  //in 5MP b/w it is not used.
-		{MainsFreqReg,		//Reg1: the command register address1
+		{0x10,/*MainsFreqReg,*/		//Reg1: the command register address1
 		 MainsFreqReg,		//Reg2: the command register address2
 		 2,					//UVCLn: the command length
 		 0,					//UVCMinLo: the command minimum value low byte
@@ -824,7 +824,7 @@ volatile static SensorCtrl EXT2DNRSTED =
 		}; //
 
 volatile static SensorCtrl EXTGammaCor =
-		{ExGammaReg,			//Reg1: the command register address1
+		{0x0E,/*ExGammaReg,*/			//Reg1: the command register address1
 		 ExGammaReg,			//Reg2: the command register address2
 		 2,					//UVCLn: the command length: 1th for mode and 2nd for gain level
 		 0,					//UVCMinLo: the command minimum value low byte
@@ -1311,7 +1311,18 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 						 sendData = glEp0Buffer[0];
 						 break;
 					 case MFreqCtlID4:
+						 if(curFlag[CtrlID]){
+							glEp0Buffer[0] = pPUCSenCtrl[CtrlID]->UVCCurVLo;
+						 }else{
+							Data0 = SensorGetControl(RegAdd0, devAdd);
+							glEp0Buffer[0] = Data0;
+						 }
+						 glEp0Buffer[1] = 0;
+						 sendData = glEp0Buffer[0];
+						 sendData1 = glEp0Buffer[1];
 
+						 break;
+                      /* the main freq. control by video resolution setting */
 						 if(curFlag[CtrlID]){
 
 							 if(is60Hz)
@@ -1332,6 +1343,7 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 						 sendData = glEp0Buffer[0];
 						 sendData1 = glEp0Buffer[1];
 						 break;
+						 /* end of the main freq. control by video resolution setting */
 					 case WBTLevCtlID11:
 						 if(curFlag[CtrlID]){
 							 glEp0Buffer[0] = WBMenuCmpArry[0];//using for blue part
@@ -1877,6 +1889,12 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 						 case MFreqCtlID4:
 							 pPUCSenCtrl[CtrlID]->UVCCurVLo = Data0;
 							 //Data0 = Data0 - 1;
+							 CyU3PMutexGet(cmdQuptr->ringMux, CYU3P_WAIT_FOREVER);       //get mutex
+							 cmdSet(cmdQuptr, CtrlID, RegAdd0, devAdd, Data0/*(Data0-GREEN_BASE)*/, dataIdx);  //First
+							 CyU3PMutexPut(cmdQuptr->ringMux);  //release the command queue mutex
+							 pPUCSenCtrl[CtrlID]->AvailableF = CyTrue;
+							 break;
+                   /* the main freq. control by video resolution setting */
 							 is60Hz = Data0;
 							 if(Data0 < 0)  //for specific check. if it's minor value, set to 0.
 							 {
@@ -1919,6 +1937,7 @@ inline void ControlHandle(uint8_t CtrlID, uint8_t  bRequest){
 
 							 pPUCSenCtrl[CtrlID]->AvailableF = CyTrue;
 							 break;
+					/* end of the main freq. control by video resolution setting */
 						 case WBTLevCtlID11: //4bytes
 							 //Data0 = glEp0Buffer[0]; //blue
 							 //Data1 = glEp0Buffer[2]; //red

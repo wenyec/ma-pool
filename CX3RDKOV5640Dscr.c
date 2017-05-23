@@ -107,7 +107,7 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     /* Configuration Descriptor*/
     0x09,                               /* Descriptor Size */
     CY_U3P_USB_CONFIG_DESCR,            /* Configuration Descriptor Type */
-    0xE4, 0x00,//0x3E, 0x01,//0x3D, 0x01,                         /* Length of this descriptor and all sub descriptors */
+    0xE5, 0x00,//0x3E, 0x01,//0x3D, 0x01,                         /* Length of this descriptor and all sub descriptors */
     0x02,                               /* Number of interfaces */
     0x01,                               /* Configuration number */
     0x03,                               /* Configuration string index */
@@ -176,12 +176,12 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x01,                               /* Source ID: 1: Conencted to input terminal */
     0x00, 0x40,                         /* Digital multiplier */
     0x03,                               /* Size of controls field for this terminal: 3 bytes */
-    0xFF,0x00,0x00,//0x5F,0x10,0x00,                 	/* No controls supported */
+    0xFF,0x05,0x00,//0x5F,0x10,0x00,                 	/* No controls supported */
     0x00,                               /* String desc index: Not used */
     0x00,                               /* Analog Video Standards Supported: None */
 
     /* Extension Unit Descriptor */
-    0x1C,                               /* Descriptor size */
+    0x1D,                               /* Descriptor size */
     ES_UVC_CS_INTRFC_DESCR,                /* Class specific interface desc type */
     0x06,                               /* Extension Unit Descriptor type */
     0x03,                               /* ID of this terminal */
@@ -192,8 +192,8 @@ const uint8_t esUVCUSBSSConfigDscr[] =
     0x04,                               /* Number of controls in this terminal */
     0x01,                               /* Number of input pins in this terminal */
     0x02,                               /* Source ID : 2 : Connected to Proc Unit */
-    0x03,                               /* Size of controls field for this terminal : 3 bytes */
-    0x05, 0x82, 0x00,                   /* No controls supported */
+    0x04,                               /* Size of controls field for this terminal : 3 bytes */
+    0x05, 0x82, 0x00, 0x04,                  /* No controls supported */
     0x00,                               /* String descriptor index : Not used */
 
     /* Output Terminal Descriptor */
